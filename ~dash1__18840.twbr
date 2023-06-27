@@ -1,0 +1,2926 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20231.23.0310.1044                               -->
+<workbook original-version='18.1' source-build='2023.1.0 (20231.23.0310.1044)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.LayerControlWidget.true...LayerControlWidget />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+        <calculation class='tableau' formula='16' />
+        <range max='20' min='1' />
+      </column>
+    </datasource>
+    <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' inline='true' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='bus_data_with_var_and_size' name='excel-direct.01zsg9w0mtgsfc0zli7fv0l1twka'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/semester4/cognition/פרויקט קוגניציה/bus_data_with_var_and_size.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='il_locations_destination' name='excel-direct.1n02co612duku11bocqye0t7uwe0'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/semester4/cognition/פרויקט קוגניציה/il_locations_destination.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='il_locations_origin' name='excel-direct.16t68sl0mxyb9h10lgh921wl4nvv'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/semester4/cognition/פרויקט קוגניציה/il_locations_origin.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='buses_pivoted' name='textscan.1vcza571mbbirt197tks40aoxnmn'>
+            <connection class='textscan' directory='C:/semester4/cognition/פרויקט קוגניציה' filename='buses_pivoted.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.01zsg9w0mtgsfc0zli7fv0l1twka' name='bus_data_with_var_and_size' table='[bus_data_with_var_and_size$]' type='table'>
+          <columns gridOrigin='A1:BA5377:no:A1:BA5377:0' header='yes' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='RouteID' ordinal='1' />
+            <column datatype='integer' name='RouteName' ordinal='2' />
+            <column datatype='integer' name='RouteDirection' ordinal='3' />
+            <column datatype='string' name='AgencyName' ordinal='4' />
+            <column datatype='string' name='ClusterName' ordinal='5' />
+            <column datatype='string' name='Metropolin' ordinal='6' />
+            <column datatype='string' name='OriginCityName' ordinal='7' />
+            <column datatype='string' name='DestinationCityName' ordinal='8' />
+            <column datatype='string' name='RouteType' ordinal='9' />
+            <column datatype='string' name='ServiceType' ordinal='10' />
+            <column datatype='string' name='RouteParticular' ordinal='11' />
+            <column datatype='string' name='BusType' ordinal='12' />
+            <column datatype='string' name='BusSize' ordinal='13' />
+            <column datatype='integer' name='NumOfAlternatives' ordinal='14' />
+            <column datatype='real' name='RouteLength' ordinal='15' />
+            <column datatype='real' name='WeeklyKM' ordinal='16' />
+            <column datatype='real' name='AVGPassengersPerWeek' ordinal='17' />
+            <column datatype='integer' name='StationsInRoute' ordinal='18' />
+            <column datatype='string' name='OperationSince' ordinal='19' />
+            <column datatype='integer' name='UniqueStations' ordinal='20' />
+            <column datatype='string' name='UniqueLocations' ordinal='21' />
+            <column datatype='integer' name='DailyRides(Tuesday)' ordinal='22' />
+            <column datatype='integer' name='WeekyRides' ordinal='23' />
+            <column datatype='real' name='DailyPassengers' ordinal='24' />
+            <column datatype='real' name='WeeklyPassengers' ordinal='25' />
+            <column datatype='real' name='AVGCommutersPerRide(Weekly)' ordinal='26' />
+            <column datatype='real' name='WorkDay - 00:00-03:59' ordinal='27' />
+            <column datatype='real' name='WorkDay - 04:00-05:59' ordinal='28' />
+            <column datatype='real' name='WorkDay - 06:00-08:59' ordinal='29' />
+            <column datatype='real' name='WorkDay - 09:00-11:59' ordinal='30' />
+            <column datatype='real' name='WorkDay - 12:00-14:59' ordinal='31' />
+            <column datatype='real' name='WorkDay - 15:00-18:59' ordinal='32' />
+            <column datatype='real' name='WorkDay - 19:00-23:59' ordinal='33' />
+            <column datatype='real' name='Friday - 00:00-03:59' ordinal='34' />
+            <column datatype='real' name='Friday - 04:00-05:59' ordinal='35' />
+            <column datatype='real' name='Friday - 06:00-08:59' ordinal='36' />
+            <column datatype='real' name='Friday - 09:00-11:59' ordinal='37' />
+            <column datatype='real' name='Friday - 12:00-14:59' ordinal='38' />
+            <column datatype='real' name='Friday - 15:00-18:59' ordinal='39' />
+            <column datatype='real' name='Friday - 19:00-23:59' ordinal='40' />
+            <column datatype='real' name='Saturday - 00:00-03:59' ordinal='41' />
+            <column datatype='real' name='Saturday - 04:00-05:59' ordinal='42' />
+            <column datatype='real' name='Saturday - 06:00-08:59' ordinal='43' />
+            <column datatype='real' name='Saturday - 09:00-11:59' ordinal='44' />
+            <column datatype='real' name='Saturday - 12:00-14:59' ordinal='45' />
+            <column datatype='real' name='Saturday - 15:00-18:59' ordinal='46' />
+            <column datatype='real' name='Saturday - 19:00-23:59' ordinal='47' />
+            <column datatype='string' name='MaxRidership' ordinal='48' />
+            <column datatype='integer' name='year' ordinal='49' />
+            <column datatype='integer' name='Q' ordinal='50' />
+            <column datatype='real' name='VarianceOfDensity' ordinal='51' />
+            <column datatype='integer' name='BusCapacity' ordinal='52' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='excel-direct.01zsg9w0mtgsfc0zli7fv0l1twka' name='bus_data_with_var_and_size' table='[bus_data_with_var_and_size$]' type='table'>
+            <columns gridOrigin='A1:BA5377:no:A1:BA5377:0' header='yes' outcome='6'>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='integer' name='RouteID' ordinal='1' />
+              <column datatype='integer' name='RouteName' ordinal='2' />
+              <column datatype='integer' name='RouteDirection' ordinal='3' />
+              <column datatype='string' name='AgencyName' ordinal='4' />
+              <column datatype='string' name='ClusterName' ordinal='5' />
+              <column datatype='string' name='Metropolin' ordinal='6' />
+              <column datatype='string' name='OriginCityName' ordinal='7' />
+              <column datatype='string' name='DestinationCityName' ordinal='8' />
+              <column datatype='string' name='RouteType' ordinal='9' />
+              <column datatype='string' name='ServiceType' ordinal='10' />
+              <column datatype='string' name='RouteParticular' ordinal='11' />
+              <column datatype='string' name='BusType' ordinal='12' />
+              <column datatype='string' name='BusSize' ordinal='13' />
+              <column datatype='integer' name='NumOfAlternatives' ordinal='14' />
+              <column datatype='real' name='RouteLength' ordinal='15' />
+              <column datatype='real' name='WeeklyKM' ordinal='16' />
+              <column datatype='real' name='AVGPassengersPerWeek' ordinal='17' />
+              <column datatype='integer' name='StationsInRoute' ordinal='18' />
+              <column datatype='string' name='OperationSince' ordinal='19' />
+              <column datatype='integer' name='UniqueStations' ordinal='20' />
+              <column datatype='string' name='UniqueLocations' ordinal='21' />
+              <column datatype='integer' name='DailyRides(Tuesday)' ordinal='22' />
+              <column datatype='integer' name='WeekyRides' ordinal='23' />
+              <column datatype='real' name='DailyPassengers' ordinal='24' />
+              <column datatype='real' name='WeeklyPassengers' ordinal='25' />
+              <column datatype='real' name='AVGCommutersPerRide(Weekly)' ordinal='26' />
+              <column datatype='real' name='WorkDay - 00:00-03:59' ordinal='27' />
+              <column datatype='real' name='WorkDay - 04:00-05:59' ordinal='28' />
+              <column datatype='real' name='WorkDay - 06:00-08:59' ordinal='29' />
+              <column datatype='real' name='WorkDay - 09:00-11:59' ordinal='30' />
+              <column datatype='real' name='WorkDay - 12:00-14:59' ordinal='31' />
+              <column datatype='real' name='WorkDay - 15:00-18:59' ordinal='32' />
+              <column datatype='real' name='WorkDay - 19:00-23:59' ordinal='33' />
+              <column datatype='real' name='Friday - 00:00-03:59' ordinal='34' />
+              <column datatype='real' name='Friday - 04:00-05:59' ordinal='35' />
+              <column datatype='real' name='Friday - 06:00-08:59' ordinal='36' />
+              <column datatype='real' name='Friday - 09:00-11:59' ordinal='37' />
+              <column datatype='real' name='Friday - 12:00-14:59' ordinal='38' />
+              <column datatype='real' name='Friday - 15:00-18:59' ordinal='39' />
+              <column datatype='real' name='Friday - 19:00-23:59' ordinal='40' />
+              <column datatype='real' name='Saturday - 00:00-03:59' ordinal='41' />
+              <column datatype='real' name='Saturday - 04:00-05:59' ordinal='42' />
+              <column datatype='real' name='Saturday - 06:00-08:59' ordinal='43' />
+              <column datatype='real' name='Saturday - 09:00-11:59' ordinal='44' />
+              <column datatype='real' name='Saturday - 12:00-14:59' ordinal='45' />
+              <column datatype='real' name='Saturday - 15:00-18:59' ordinal='46' />
+              <column datatype='real' name='Saturday - 19:00-23:59' ordinal='47' />
+              <column datatype='string' name='MaxRidership' ordinal='48' />
+              <column datatype='integer' name='year' ordinal='49' />
+              <column datatype='integer' name='Q' ordinal='50' />
+              <column datatype='real' name='VarianceOfDensity' ordinal='51' />
+              <column datatype='integer' name='BusCapacity' ordinal='52' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1vcza571mbbirt197tks40aoxnmn' name='buses_pivoted.csv' table='[buses_pivoted#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='Agency Name' ordinal='1' />
+              <column datatype='real' name='AVG Passengers Per Week' ordinal='2' />
+              <column datatype='string' name='Bus Size' ordinal='3' />
+              <column datatype='string' name='Bus Type' ordinal='4' />
+              <column datatype='string' name='Cluster Name' ordinal='5' />
+              <column datatype='string' name='Destination City Name' ordinal='6' />
+              <column datatype='string' name='Max Ridership' ordinal='7' />
+              <column datatype='string' name='Metropolin' ordinal='8' />
+              <column datatype='string' name='Operation Since' ordinal='9' />
+              <column datatype='string' name='Origin City Name' ordinal='10' />
+              <column datatype='integer' name='Route ID' ordinal='11' />
+              <column datatype='string' name='Route Particular' ordinal='12' />
+              <column datatype='string' name='Route Type' ordinal='13' />
+              <column datatype='string' name='Service Type' ordinal='14' />
+              <column datatype='string' name='Time' ordinal='15' />
+              <column datatype='string' name='DayOfWeek' ordinal='16' />
+              <column datatype='string' name='Unique Locations' ordinal='17' />
+              <column datatype='integer' name='Year' ordinal='18' />
+              <column datatype='real' name='AVGCommutersPerRide(Weekly)' ordinal='19' />
+              <column datatype='real' name='AVGPaysPerRide' ordinal='20' />
+              <column datatype='real' name='Daily Passengers' ordinal='21' />
+              <column datatype='integer' name='DailyRides(Tuesday)' ordinal='22' />
+              <column datatype='integer' name='Num Of Alternatives' ordinal='23' />
+              <column datatype='integer' name='Q' ordinal='24' />
+              <column datatype='integer' name='Route Direction' ordinal='25' />
+              <column datatype='real' name='Route Length' ordinal='26' />
+              <column datatype='integer' name='Route Name' ordinal='27' />
+              <column datatype='integer' name='Stations In Route' ordinal='28' />
+              <column datatype='real' name='Unique Stations' ordinal='29' />
+              <column datatype='real' name='Weekly KM' ordinal='30' />
+              <column datatype='real' name='Weekly Passengers' ordinal='31' />
+              <column datatype='integer' name='Weeky Rides' ordinal='32' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.16t68sl0mxyb9h10lgh921wl4nvv' name='il_locations1' table='[il_locations$]' type='table'>
+            <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
+              <column datatype='real' name='longitude_origin' ordinal='0' />
+              <column datatype='real' name='latitude_origin' ordinal='1' />
+              <column datatype='string' name='city_lms_origin' ordinal='2' />
+              <column datatype='string' name='city_heb_lms_origin' ordinal='3' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1n02co612duku11bocqye0t7uwe0' name='il_locations' table='[il_locations$]' type='table'>
+            <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
+              <column datatype='real' name='longitude_destination' ordinal='0' />
+              <column datatype='real' name='latitude_destination' ordinal='1' />
+              <column datatype='string' name='city_lms_destination' ordinal='2' />
+              <column datatype='string' name='city_heb_lms_destination' ordinal='3' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[AVG Passengers Per Week]' value='[buses_pivoted.csv].[AVG Passengers Per Week]' />
+          <map key='[AVGCommutersPerRide(Weekly) (buses_pivoted.csv)]' value='[buses_pivoted.csv].[AVGCommutersPerRide(Weekly)]' />
+          <map key='[AVGCommutersPerRide(Weekly)]' value='[bus_data_with_var_and_size].[AVGCommutersPerRide(Weekly)]' />
+          <map key='[AVGPassengersPerWeek]' value='[bus_data_with_var_and_size].[AVGPassengersPerWeek]' />
+          <map key='[AVGPaysPerRide]' value='[buses_pivoted.csv].[AVGPaysPerRide]' />
+          <map key='[Agency Name]' value='[buses_pivoted.csv].[Agency Name]' />
+          <map key='[AgencyName]' value='[bus_data_with_var_and_size].[AgencyName]' />
+          <map key='[Bus Size]' value='[buses_pivoted.csv].[Bus Size]' />
+          <map key='[Bus Type]' value='[buses_pivoted.csv].[Bus Type]' />
+          <map key='[BusCapacity]' value='[bus_data_with_var_and_size].[BusCapacity]' />
+          <map key='[BusSize]' value='[bus_data_with_var_and_size].[BusSize]' />
+          <map key='[BusType]' value='[bus_data_with_var_and_size].[BusType]' />
+          <map key='[Cluster Name]' value='[buses_pivoted.csv].[Cluster Name]' />
+          <map key='[ClusterName]' value='[bus_data_with_var_and_size].[ClusterName]' />
+          <map key='[Daily Passengers]' value='[buses_pivoted.csv].[Daily Passengers]' />
+          <map key='[DailyPassengers]' value='[bus_data_with_var_and_size].[DailyPassengers]' />
+          <map key='[DailyRides(Tuesday) (buses_pivoted.csv)]' value='[buses_pivoted.csv].[DailyRides(Tuesday)]' />
+          <map key='[DailyRides(Tuesday)]' value='[bus_data_with_var_and_size].[DailyRides(Tuesday)]' />
+          <map key='[DayOfWeek]' value='[buses_pivoted.csv].[DayOfWeek]' />
+          <map key='[Destination City Name]' value='[buses_pivoted.csv].[Destination City Name]' />
+          <map key='[DestinationCityName]' value='[bus_data_with_var_and_size].[DestinationCityName]' />
+          <map key='[F1 (buses_pivoted.csv)]' value='[buses_pivoted.csv].[F1]' />
+          <map key='[F1]' value='[bus_data_with_var_and_size].[F1]' />
+          <map key='[Friday - 00:00-03:59]' value='[bus_data_with_var_and_size].[Friday - 00:00-03:59]' />
+          <map key='[Friday - 04:00-05:59]' value='[bus_data_with_var_and_size].[Friday - 04:00-05:59]' />
+          <map key='[Friday - 06:00-08:59]' value='[bus_data_with_var_and_size].[Friday - 06:00-08:59]' />
+          <map key='[Friday - 09:00-11:59]' value='[bus_data_with_var_and_size].[Friday - 09:00-11:59]' />
+          <map key='[Friday - 12:00-14:59]' value='[bus_data_with_var_and_size].[Friday - 12:00-14:59]' />
+          <map key='[Friday - 15:00-18:59]' value='[bus_data_with_var_and_size].[Friday - 15:00-18:59]' />
+          <map key='[Friday - 19:00-23:59]' value='[bus_data_with_var_and_size].[Friday - 19:00-23:59]' />
+          <map key='[Max Ridership]' value='[buses_pivoted.csv].[Max Ridership]' />
+          <map key='[MaxRidership]' value='[bus_data_with_var_and_size].[MaxRidership]' />
+          <map key='[Metropolin (buses_pivoted.csv)]' value='[buses_pivoted.csv].[Metropolin]' />
+          <map key='[Metropolin]' value='[bus_data_with_var_and_size].[Metropolin]' />
+          <map key='[Num Of Alternatives]' value='[buses_pivoted.csv].[Num Of Alternatives]' />
+          <map key='[NumOfAlternatives]' value='[bus_data_with_var_and_size].[NumOfAlternatives]' />
+          <map key='[Operation Since]' value='[buses_pivoted.csv].[Operation Since]' />
+          <map key='[OperationSince]' value='[bus_data_with_var_and_size].[OperationSince]' />
+          <map key='[Origin City Name]' value='[buses_pivoted.csv].[Origin City Name]' />
+          <map key='[OriginCityName]' value='[bus_data_with_var_and_size].[OriginCityName]' />
+          <map key='[Q (buses_pivoted.csv)]' value='[buses_pivoted.csv].[Q]' />
+          <map key='[Q]' value='[bus_data_with_var_and_size].[Q]' />
+          <map key='[Route Direction]' value='[buses_pivoted.csv].[Route Direction]' />
+          <map key='[Route ID]' value='[buses_pivoted.csv].[Route ID]' />
+          <map key='[Route Length]' value='[buses_pivoted.csv].[Route Length]' />
+          <map key='[Route Name]' value='[buses_pivoted.csv].[Route Name]' />
+          <map key='[Route Particular]' value='[buses_pivoted.csv].[Route Particular]' />
+          <map key='[Route Type]' value='[buses_pivoted.csv].[Route Type]' />
+          <map key='[RouteDirection]' value='[bus_data_with_var_and_size].[RouteDirection]' />
+          <map key='[RouteID]' value='[bus_data_with_var_and_size].[RouteID]' />
+          <map key='[RouteLength]' value='[bus_data_with_var_and_size].[RouteLength]' />
+          <map key='[RouteName]' value='[bus_data_with_var_and_size].[RouteName]' />
+          <map key='[RouteParticular]' value='[bus_data_with_var_and_size].[RouteParticular]' />
+          <map key='[RouteType]' value='[bus_data_with_var_and_size].[RouteType]' />
+          <map key='[Saturday - 00:00-03:59]' value='[bus_data_with_var_and_size].[Saturday - 00:00-03:59]' />
+          <map key='[Saturday - 04:00-05:59]' value='[bus_data_with_var_and_size].[Saturday - 04:00-05:59]' />
+          <map key='[Saturday - 06:00-08:59]' value='[bus_data_with_var_and_size].[Saturday - 06:00-08:59]' />
+          <map key='[Saturday - 09:00-11:59]' value='[bus_data_with_var_and_size].[Saturday - 09:00-11:59]' />
+          <map key='[Saturday - 12:00-14:59]' value='[bus_data_with_var_and_size].[Saturday - 12:00-14:59]' />
+          <map key='[Saturday - 15:00-18:59]' value='[bus_data_with_var_and_size].[Saturday - 15:00-18:59]' />
+          <map key='[Saturday - 19:00-23:59]' value='[bus_data_with_var_and_size].[Saturday - 19:00-23:59]' />
+          <map key='[Service Type]' value='[buses_pivoted.csv].[Service Type]' />
+          <map key='[ServiceType]' value='[bus_data_with_var_and_size].[ServiceType]' />
+          <map key='[Stations In Route]' value='[buses_pivoted.csv].[Stations In Route]' />
+          <map key='[StationsInRoute]' value='[bus_data_with_var_and_size].[StationsInRoute]' />
+          <map key='[Time]' value='[buses_pivoted.csv].[Time]' />
+          <map key='[Unique Locations]' value='[buses_pivoted.csv].[Unique Locations]' />
+          <map key='[Unique Stations]' value='[buses_pivoted.csv].[Unique Stations]' />
+          <map key='[UniqueLocations]' value='[bus_data_with_var_and_size].[UniqueLocations]' />
+          <map key='[UniqueStations]' value='[bus_data_with_var_and_size].[UniqueStations]' />
+          <map key='[VarianceOfDensity]' value='[bus_data_with_var_and_size].[VarianceOfDensity]' />
+          <map key='[Weekly KM]' value='[buses_pivoted.csv].[Weekly KM]' />
+          <map key='[Weekly Passengers]' value='[buses_pivoted.csv].[Weekly Passengers]' />
+          <map key='[WeeklyKM]' value='[bus_data_with_var_and_size].[WeeklyKM]' />
+          <map key='[WeeklyPassengers]' value='[bus_data_with_var_and_size].[WeeklyPassengers]' />
+          <map key='[Weeky Rides]' value='[buses_pivoted.csv].[Weeky Rides]' />
+          <map key='[WeekyRides]' value='[bus_data_with_var_and_size].[WeekyRides]' />
+          <map key='[WorkDay - 00:00-03:59]' value='[bus_data_with_var_and_size].[WorkDay - 00:00-03:59]' />
+          <map key='[WorkDay - 04:00-05:59]' value='[bus_data_with_var_and_size].[WorkDay - 04:00-05:59]' />
+          <map key='[WorkDay - 06:00-08:59]' value='[bus_data_with_var_and_size].[WorkDay - 06:00-08:59]' />
+          <map key='[WorkDay - 09:00-11:59]' value='[bus_data_with_var_and_size].[WorkDay - 09:00-11:59]' />
+          <map key='[WorkDay - 12:00-14:59]' value='[bus_data_with_var_and_size].[WorkDay - 12:00-14:59]' />
+          <map key='[WorkDay - 15:00-18:59]' value='[bus_data_with_var_and_size].[WorkDay - 15:00-18:59]' />
+          <map key='[WorkDay - 19:00-23:59]' value='[bus_data_with_var_and_size].[WorkDay - 19:00-23:59]' />
+          <map key='[Year]' value='[buses_pivoted.csv].[Year]' />
+          <map key='[city_heb_lms_destination]' value='[il_locations].[city_heb_lms_destination]' />
+          <map key='[city_heb_lms_origin]' value='[il_locations1].[city_heb_lms_origin]' />
+          <map key='[city_lms_destination]' value='[il_locations].[city_lms_destination]' />
+          <map key='[city_lms_origin]' value='[il_locations1].[city_lms_origin]' />
+          <map key='[latitude_destination]' value='[il_locations].[latitude_destination]' />
+          <map key='[latitude_origin]' value='[il_locations1].[latitude_origin]' />
+          <map key='[longitude_destination]' value='[il_locations].[longitude_destination]' />
+          <map key='[longitude_origin]' value='[il_locations1].[longitude_origin]' />
+          <map key='[year]' value='[bus_data_with_var_and_size].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RouteID]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteName</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RouteName]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteDirection</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[RouteDirection]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteDirection</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AgencyName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[AgencyName]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>AgencyName</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ClusterName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ClusterName]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>ClusterName</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Metropolin</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Metropolin]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Metropolin</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OriginCityName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[OriginCityName]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>OriginCityName</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DestinationCityName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[DestinationCityName]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>DestinationCityName</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RouteType]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteType</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ServiceType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ServiceType]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>ServiceType</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteParticular</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[RouteParticular]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteParticular</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BusType</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BusType]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>BusType</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BusSize</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[BusSize]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>BusSize</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NumOfAlternatives</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NumOfAlternatives]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>NumOfAlternatives</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RouteLength</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[RouteLength]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>RouteLength</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WeeklyKM</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WeeklyKM]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WeeklyKM</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVGPassengersPerWeek</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVGPassengersPerWeek]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>AVGPassengersPerWeek</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StationsInRoute</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[StationsInRoute]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>StationsInRoute</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OperationSince</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[OperationSince]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>OperationSince</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UniqueStations</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[UniqueStations]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>UniqueStations</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UniqueLocations</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[UniqueLocations]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>UniqueLocations</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DailyRides(Tuesday)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DailyRides(Tuesday)]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>DailyRides(Tuesday)</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WeekyRides</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WeekyRides]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WeekyRides</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DailyPassengers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DailyPassengers]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>DailyPassengers</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WeeklyPassengers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WeeklyPassengers]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WeeklyPassengers</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVGCommutersPerRide(Weekly)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVGCommutersPerRide(Weekly)]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>AVGCommutersPerRide(Weekly)</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 00:00-03:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 00:00-03:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 00:00-03:59</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 04:00-05:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 04:00-05:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 04:00-05:59</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 06:00-08:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 06:00-08:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 06:00-08:59</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 09:00-11:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 09:00-11:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 09:00-11:59</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 12:00-14:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 12:00-14:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 12:00-14:59</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 15:00-18:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 15:00-18:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 15:00-18:59</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WorkDay - 19:00-23:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[WorkDay - 19:00-23:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>WorkDay - 19:00-23:59</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 00:00-03:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 00:00-03:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 00:00-03:59</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 04:00-05:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 04:00-05:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 04:00-05:59</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 06:00-08:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 06:00-08:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 06:00-08:59</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 09:00-11:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 09:00-11:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 09:00-11:59</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 12:00-14:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 12:00-14:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 12:00-14:59</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 15:00-18:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 15:00-18:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 15:00-18:59</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Friday - 19:00-23:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Friday - 19:00-23:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Friday - 19:00-23:59</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 00:00-03:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 00:00-03:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 00:00-03:59</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 04:00-05:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 04:00-05:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 04:00-05:59</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 06:00-08:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 06:00-08:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 06:00-08:59</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 09:00-11:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 09:00-11:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 09:00-11:59</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 12:00-14:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 12:00-14:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 12:00-14:59</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 15:00-18:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 15:00-18:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 15:00-18:59</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Saturday - 19:00-23:59</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Saturday - 19:00-23:59]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Saturday - 19:00-23:59</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MaxRidership</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[MaxRidership]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>MaxRidership</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>Q</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VarianceOfDensity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VarianceOfDensity]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>VarianceOfDensity</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BusCapacity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BusCapacity]</local-name>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias>BusCapacity</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[bus_data_with_var_and_size]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:BA5377:no:A1:BA5377:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1 (buses_pivoted.csv)]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Agency Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Agency Name]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Agency Name</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVG Passengers Per Week</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVG Passengers Per Week]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>AVG Passengers Per Week</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bus Size</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Bus Size]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Bus Size</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Bus Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Bus Type]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Bus Type</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cluster Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Cluster Name]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Cluster Name</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Destination City Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Destination City Name]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Destination City Name</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Max Ridership</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Max Ridership]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Max Ridership</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Metropolin</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Metropolin (buses_pivoted.csv)]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Metropolin</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Operation Since</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Operation Since]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Operation Since</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Origin City Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Origin City Name]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Origin City Name</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Route ID]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route ID</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route Particular</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Route Particular]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route Particular</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Route Type]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route Type</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Service Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Service Type]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Service Type</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Time]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DayOfWeek</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DayOfWeek]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>DayOfWeek</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unique Locations</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Unique Locations]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Unique Locations</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVGCommutersPerRide(Weekly)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVGCommutersPerRide(Weekly) (buses_pivoted.csv)]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>AVGCommutersPerRide(Weekly)</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AVGPaysPerRide</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[AVGPaysPerRide]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>AVGPaysPerRide</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Daily Passengers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Daily Passengers]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Daily Passengers</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DailyRides(Tuesday)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DailyRides(Tuesday) (buses_pivoted.csv)]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>DailyRides(Tuesday)</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Num Of Alternatives</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Num Of Alternatives]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Num Of Alternatives</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Q</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Q (buses_pivoted.csv)]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Q</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route Direction</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Route Direction]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route Direction</remote-alias>
+            <ordinal>78</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route Length</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Route Length]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route Length</remote-alias>
+            <ordinal>79</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Route Name</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Route Name]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Route Name</remote-alias>
+            <ordinal>80</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Stations In Route</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Stations In Route]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Stations In Route</remote-alias>
+            <ordinal>81</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unique Stations</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Unique Stations]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Unique Stations</remote-alias>
+            <ordinal>82</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Weekly KM</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Weekly KM]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Weekly KM</remote-alias>
+            <ordinal>83</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Weekly Passengers</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Weekly Passengers]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Weekly Passengers</remote-alias>
+            <ordinal>84</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Weeky Rides</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Weeky Rides]</local-name>
+            <parent-name>[buses_pivoted.csv]</parent-name>
+            <remote-alias>Weeky Rides</remote-alias>
+            <ordinal>85</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude_origin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude_origin]</local-name>
+            <parent-name>[il_locations1]</parent-name>
+            <remote-alias>longitude_origin</remote-alias>
+            <ordinal>86</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude_origin</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude_origin]</local-name>
+            <parent-name>[il_locations1]</parent-name>
+            <remote-alias>latitude_origin</remote-alias>
+            <ordinal>87</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city_lms_origin</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city_lms_origin]</local-name>
+            <parent-name>[il_locations1]</parent-name>
+            <remote-alias>city_lms_origin</remote-alias>
+            <ordinal>88</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city_heb_lms_origin</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city_heb_lms_origin]</local-name>
+            <parent-name>[il_locations1]</parent-name>
+            <remote-alias>city_heb_lms_origin</remote-alias>
+            <ordinal>89</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[il_locations1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D1262:no:A1:D1262:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>longitude_destination</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[longitude_destination]</local-name>
+            <parent-name>[il_locations]</parent-name>
+            <remote-alias>longitude_destination</remote-alias>
+            <ordinal>90</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>latitude_destination</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[latitude_destination]</local-name>
+            <parent-name>[il_locations]</parent-name>
+            <remote-alias>latitude_destination</remote-alias>
+            <ordinal>91</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city_lms_destination</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city_lms_destination]</local-name>
+            <parent-name>[il_locations]</parent-name>
+            <remote-alias>city_lms_destination</remote-alias>
+            <ordinal>92</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>city_heb_lms_destination</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[city_heb_lms_destination]</local-name>
+            <parent-name>[il_locations]</parent-name>
+            <remote-alias>city_heb_lms_destination</remote-alias>
+            <ordinal>93</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[il_locations]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D1262:no:A1:D1262:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='AVG Passengers Per Week1' datatype='real' name='[AVG Passengers Per Week]' role='measure' type='quantitative' />
+      <column caption='AVGCommutersPerRide(Weekly) (buses pivoted.csv)' datatype='real' name='[AVGCommutersPerRide(Weekly) (buses_pivoted.csv)]' role='measure' type='quantitative' />
+      <column caption='AVG Passengers Per Week' datatype='real' name='[AVGPassengersPerWeek]' role='dimension' type='quantitative' />
+      <column caption='AVG Pays Per Ride' datatype='real' name='[AVGPaysPerRide]' role='measure' type='quantitative' />
+      <column caption='Agency Name1' datatype='string' name='[Agency Name]' role='dimension' type='nominal' />
+      <column caption='Agency Name' datatype='string' name='[AgencyName]' role='dimension' type='nominal' />
+      <column caption='Bus Size1' datatype='string' name='[Bus Size]' role='dimension' type='nominal' />
+      <column caption='Bus Type1' datatype='string' name='[Bus Type]' role='dimension' type='nominal' />
+      <column caption='Bus Capacity' datatype='integer' name='[BusCapacity]' role='measure' type='quantitative' />
+      <column caption='Bus Size' datatype='string' name='[BusSize]' role='dimension' type='nominal' />
+      <column caption='Bus Type' datatype='string' name='[BusType]' role='dimension' type='nominal' />
+      <column caption='RouteIDandDirection' datatype='string' name='[Calculation_1325747181590339584]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='STR([RouteID]) + &quot; Direction &quot; + STR([RouteDirection])' />
+      </column>
+      <column caption='AVG pays per ride RANGE' datatype='real' name='[Calculation_1325747181621391361]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MAX([AVGPaysPerRide]) - MIN([AVGPaysPerRide])' />
+      </column>
+      <column caption='avg passengers per allowed and freq' datatype='real' name='[Calculation_1371627601206587392]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([WeeklyPassengers]/[WeekyRides])/[BusCapacity]' />
+      </column>
+      <column caption='Cluster Name1' datatype='string' name='[Cluster Name]' role='dimension' type='nominal' />
+      <column caption='Cluster Name' datatype='string' name='[ClusterName]' role='dimension' type='nominal' />
+      <column caption='Daily Passengers1' datatype='real' name='[Daily Passengers]' role='measure' type='quantitative' />
+      <column caption='Daily Passengers' datatype='real' name='[DailyPassengers]' role='measure' type='quantitative' />
+      <column caption='DailyRides(Tuesday) (buses pivoted.csv)' datatype='integer' name='[DailyRides(Tuesday) (buses_pivoted.csv)]' role='measure' type='quantitative' />
+      <column caption='Day Of Week' datatype='string' name='[DayOfWeek]' role='dimension' type='nominal' />
+      <column caption='Destination City Name1' datatype='string' name='[Destination City Name]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Destination' datatype='string' name='[DestinationCityName]' role='dimension' type='nominal' />
+      <column caption='F1 (buses pivoted.csv)' datatype='integer' name='[F1 (buses_pivoted.csv)]' role='measure' type='quantitative' />
+      <column caption='Max Ridership1' datatype='string' name='[Max Ridership]' role='dimension' type='nominal' />
+      <column caption='Max Ridership' datatype='string' name='[MaxRidership]' role='dimension' type='nominal' />
+      <column caption='Metropolin (buses pivoted.csv)' datatype='string' name='[Metropolin (buses_pivoted.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
+      <column caption='Num Of Alternatives1' datatype='integer' name='[Num Of Alternatives]' role='measure' type='quantitative' />
+      <column caption='Num Of Alternatives' datatype='integer' name='[NumOfAlternatives]' role='measure' type='quantitative' />
+      <column caption='Operation Since1' datatype='string' name='[Operation Since]' role='dimension' type='nominal' />
+      <column caption='Operation Since' datatype='string' name='[OperationSince]' role='dimension' type='nominal' />
+      <column caption='Origin City Name1' datatype='string' name='[Origin City Name]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Origin' datatype='string' name='[OriginCityName]' role='dimension' type='nominal' />
+      <column caption='Q (buses pivoted.csv)' datatype='integer' name='[Q (buses_pivoted.csv)]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Route Direction1' datatype='integer' name='[Route Direction]' role='dimension' type='ordinal' />
+      <column caption='Route ID1' datatype='integer' name='[Route ID]' role='dimension' type='ordinal' />
+      <column caption='Route Length1' datatype='real' name='[Route Length]' role='measure' type='quantitative' />
+      <column caption='Route Name1' datatype='integer' name='[Route Name]' role='measure' type='quantitative' />
+      <column caption='Route Particular1' datatype='string' name='[Route Particular]' role='dimension' type='nominal' />
+      <column caption='Route Type1' datatype='string' name='[Route Type]' role='dimension' type='nominal' />
+      <column caption='Route Direction' datatype='integer' name='[RouteDirection]' role='measure' type='quantitative' />
+      <column caption='Route ID' datatype='integer' name='[RouteID]' role='dimension' type='ordinal' />
+      <column caption='Route Length' datatype='real' name='[RouteLength]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Route Name' datatype='integer' name='[RouteName]' role='dimension' type='ordinal' />
+      <column caption='Route Particular' datatype='string' name='[RouteParticular]' role='dimension' type='nominal' />
+      <column caption='Route Type' datatype='string' name='[RouteType]' role='dimension' type='nominal' />
+      <column caption='Service Type1' datatype='string' name='[Service Type]' role='dimension' type='nominal' />
+      <column caption='Service Type' datatype='string' name='[ServiceType]' role='dimension' type='nominal' />
+      <column caption='Stations In Route1' datatype='integer' name='[Stations In Route]' role='measure' type='quantitative' />
+      <column caption='Stations In Route' datatype='integer' name='[StationsInRoute]' role='measure' type='quantitative' />
+      <column caption='Unique Locations1' datatype='string' name='[Unique Locations]' role='dimension' type='nominal' />
+      <column caption='Unique Stations1' datatype='real' name='[Unique Stations]' role='measure' type='quantitative' />
+      <column caption='Unique Locations' datatype='string' name='[UniqueLocations]' role='dimension' type='nominal' />
+      <column caption='Unique Stations' datatype='integer' name='[UniqueStations]' role='measure' type='quantitative' />
+      <column aggregation='None' datatype='integer' name='[Variance Of Density (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='1' formula='[VarianceOfDensity]' peg='0' size='50' />
+      </column>
+      <column caption='Variance Of Density' datatype='real' name='[VarianceOfDensity]' role='measure' type='quantitative' />
+      <column caption='Weekly KM1' datatype='real' name='[Weekly KM]' role='measure' type='quantitative' />
+      <column caption='Weekly Passengers1' datatype='real' name='[Weekly Passengers]' role='measure' type='quantitative' />
+      <column caption='Weekly KM' datatype='real' name='[WeeklyKM]' role='measure' type='quantitative' />
+      <column caption='Weekly Passengers' datatype='real' name='[WeeklyPassengers]' role='measure' type='quantitative' />
+      <column caption='Weeky Rides1' datatype='integer' name='[Weeky Rides]' role='measure' type='quantitative' />
+      <column caption='Weeky Rides' datatype='integer' name='[WeekyRides]' role='measure' type='quantitative' />
+      <column caption='Year1' datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='bus_data_with_var_and_size' datatype='table' name='[__tableau_internal_object_id__].[bus!data!with!var!and!size_169ACAE9F32A40F6AFC76FB86CAC1727]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='buses_pivoted.csv' datatype='table' name='[__tableau_internal_object_id__].[buses_pivoted.csv_701C756BCE1D4E93BF903E2B4BA0238D]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='il_locations1' datatype='table' name='[__tableau_internal_object_id__].[il!locations_27A8E35FD2A04BE5A5998254C316BD42]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='il_locations' datatype='table' name='[__tableau_internal_object_id__].[il!locations_3B40EEF2C2E0408FB4B7208CC93B5AE7]' role='measure' type='quantitative' />
+      <column aggregation='None' datatype='integer' name='[avg passengers per allowed and freq (bin)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='-1' formula='[Calculation_1371627601206587392]' peg='0' size='0.1' />
+      </column>
+      <column caption='City Heb Lms Destination' datatype='string' name='[city_heb_lms_destination]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='City Heb Lms Origin' datatype='string' name='[city_heb_lms_origin]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='City Lms Destination' datatype='string' name='[city_lms_destination]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='City Lms Origin' datatype='string' name='[city_lms_origin]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column aggregation='Avg' caption='Latitude Destination' datatype='real' name='[latitude_destination]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Latitude Origin' datatype='real' name='[latitude_origin]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Longitude Destination' datatype='real' name='[longitude_destination]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Longitude Origin' datatype='real' name='[longitude_origin]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Metropolin,Origin City Name)' hidden='true' name='[Action (Metropolin,Origin City Name)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Metropolin]' />
+          <groupfilter function='level-members' level='[OriginCityName]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (RouteIDandDirection,Destination,Origin,Route Name)' hidden='true' name='[Action (RouteIDandDirection,Destination,Origin,Route Name)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+          <groupfilter function='level-members' level='[DestinationCityName]' />
+          <groupfilter function='level-members' level='[OriginCityName]' />
+          <groupfilter function='level-members' level='[RouteName]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)' hidden='true' name='[Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+          <groupfilter function='level-members' level='[DestinationCityName]' />
+          <groupfilter function='level-members' level='[OriginCityName]' />
+          <groupfilter function='level-members' level='[RouteName]' />
+          <groupfilter function='level-members' level='[Service Type]' />
+        </groupfilter>
+      </group>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Metropolin:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;הדרום&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;גוש דן&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;מרכז&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;מזרח ירושלים&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;גולן גליל ועמקים&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;י-ם&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;בין מחוזי&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;מטרופולין חיפה&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;USA&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='bus_data_with_var_and_size' id='bus!data!with!var!and!size_169ACAE9F32A40F6AFC76FB86CAC1727'>
+            <properties context=''>
+              <relation connection='excel-direct.01zsg9w0mtgsfc0zli7fv0l1twka' name='bus_data_with_var_and_size' table='[bus_data_with_var_and_size$]' type='table'>
+                <columns gridOrigin='A1:BA5377:no:A1:BA5377:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='integer' name='RouteID' ordinal='1' />
+                  <column datatype='integer' name='RouteName' ordinal='2' />
+                  <column datatype='integer' name='RouteDirection' ordinal='3' />
+                  <column datatype='string' name='AgencyName' ordinal='4' />
+                  <column datatype='string' name='ClusterName' ordinal='5' />
+                  <column datatype='string' name='Metropolin' ordinal='6' />
+                  <column datatype='string' name='OriginCityName' ordinal='7' />
+                  <column datatype='string' name='DestinationCityName' ordinal='8' />
+                  <column datatype='string' name='RouteType' ordinal='9' />
+                  <column datatype='string' name='ServiceType' ordinal='10' />
+                  <column datatype='string' name='RouteParticular' ordinal='11' />
+                  <column datatype='string' name='BusType' ordinal='12' />
+                  <column datatype='string' name='BusSize' ordinal='13' />
+                  <column datatype='integer' name='NumOfAlternatives' ordinal='14' />
+                  <column datatype='real' name='RouteLength' ordinal='15' />
+                  <column datatype='real' name='WeeklyKM' ordinal='16' />
+                  <column datatype='real' name='AVGPassengersPerWeek' ordinal='17' />
+                  <column datatype='integer' name='StationsInRoute' ordinal='18' />
+                  <column datatype='string' name='OperationSince' ordinal='19' />
+                  <column datatype='integer' name='UniqueStations' ordinal='20' />
+                  <column datatype='string' name='UniqueLocations' ordinal='21' />
+                  <column datatype='integer' name='DailyRides(Tuesday)' ordinal='22' />
+                  <column datatype='integer' name='WeekyRides' ordinal='23' />
+                  <column datatype='real' name='DailyPassengers' ordinal='24' />
+                  <column datatype='real' name='WeeklyPassengers' ordinal='25' />
+                  <column datatype='real' name='AVGCommutersPerRide(Weekly)' ordinal='26' />
+                  <column datatype='real' name='WorkDay - 00:00-03:59' ordinal='27' />
+                  <column datatype='real' name='WorkDay - 04:00-05:59' ordinal='28' />
+                  <column datatype='real' name='WorkDay - 06:00-08:59' ordinal='29' />
+                  <column datatype='real' name='WorkDay - 09:00-11:59' ordinal='30' />
+                  <column datatype='real' name='WorkDay - 12:00-14:59' ordinal='31' />
+                  <column datatype='real' name='WorkDay - 15:00-18:59' ordinal='32' />
+                  <column datatype='real' name='WorkDay - 19:00-23:59' ordinal='33' />
+                  <column datatype='real' name='Friday - 00:00-03:59' ordinal='34' />
+                  <column datatype='real' name='Friday - 04:00-05:59' ordinal='35' />
+                  <column datatype='real' name='Friday - 06:00-08:59' ordinal='36' />
+                  <column datatype='real' name='Friday - 09:00-11:59' ordinal='37' />
+                  <column datatype='real' name='Friday - 12:00-14:59' ordinal='38' />
+                  <column datatype='real' name='Friday - 15:00-18:59' ordinal='39' />
+                  <column datatype='real' name='Friday - 19:00-23:59' ordinal='40' />
+                  <column datatype='real' name='Saturday - 00:00-03:59' ordinal='41' />
+                  <column datatype='real' name='Saturday - 04:00-05:59' ordinal='42' />
+                  <column datatype='real' name='Saturday - 06:00-08:59' ordinal='43' />
+                  <column datatype='real' name='Saturday - 09:00-11:59' ordinal='44' />
+                  <column datatype='real' name='Saturday - 12:00-14:59' ordinal='45' />
+                  <column datatype='real' name='Saturday - 15:00-18:59' ordinal='46' />
+                  <column datatype='real' name='Saturday - 19:00-23:59' ordinal='47' />
+                  <column datatype='string' name='MaxRidership' ordinal='48' />
+                  <column datatype='integer' name='year' ordinal='49' />
+                  <column datatype='integer' name='Q' ordinal='50' />
+                  <column datatype='real' name='VarianceOfDensity' ordinal='51' />
+                  <column datatype='integer' name='BusCapacity' ordinal='52' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='buses_pivoted.csv' id='buses_pivoted.csv_701C756BCE1D4E93BF903E2B4BA0238D'>
+            <properties context=''>
+              <relation connection='textscan.1vcza571mbbirt197tks40aoxnmn' name='buses_pivoted.csv' table='[buses_pivoted#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='F1' ordinal='0' />
+                  <column datatype='string' name='Agency Name' ordinal='1' />
+                  <column datatype='real' name='AVG Passengers Per Week' ordinal='2' />
+                  <column datatype='string' name='Bus Size' ordinal='3' />
+                  <column datatype='string' name='Bus Type' ordinal='4' />
+                  <column datatype='string' name='Cluster Name' ordinal='5' />
+                  <column datatype='string' name='Destination City Name' ordinal='6' />
+                  <column datatype='string' name='Max Ridership' ordinal='7' />
+                  <column datatype='string' name='Metropolin' ordinal='8' />
+                  <column datatype='string' name='Operation Since' ordinal='9' />
+                  <column datatype='string' name='Origin City Name' ordinal='10' />
+                  <column datatype='integer' name='Route ID' ordinal='11' />
+                  <column datatype='string' name='Route Particular' ordinal='12' />
+                  <column datatype='string' name='Route Type' ordinal='13' />
+                  <column datatype='string' name='Service Type' ordinal='14' />
+                  <column datatype='string' name='Time' ordinal='15' />
+                  <column datatype='string' name='DayOfWeek' ordinal='16' />
+                  <column datatype='string' name='Unique Locations' ordinal='17' />
+                  <column datatype='integer' name='Year' ordinal='18' />
+                  <column datatype='real' name='AVGCommutersPerRide(Weekly)' ordinal='19' />
+                  <column datatype='real' name='AVGPaysPerRide' ordinal='20' />
+                  <column datatype='real' name='Daily Passengers' ordinal='21' />
+                  <column datatype='integer' name='DailyRides(Tuesday)' ordinal='22' />
+                  <column datatype='integer' name='Num Of Alternatives' ordinal='23' />
+                  <column datatype='integer' name='Q' ordinal='24' />
+                  <column datatype='integer' name='Route Direction' ordinal='25' />
+                  <column datatype='real' name='Route Length' ordinal='26' />
+                  <column datatype='integer' name='Route Name' ordinal='27' />
+                  <column datatype='integer' name='Stations In Route' ordinal='28' />
+                  <column datatype='real' name='Unique Stations' ordinal='29' />
+                  <column datatype='real' name='Weekly KM' ordinal='30' />
+                  <column datatype='real' name='Weekly Passengers' ordinal='31' />
+                  <column datatype='integer' name='Weeky Rides' ordinal='32' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='il_locations1' id='il!locations_27A8E35FD2A04BE5A5998254C316BD42'>
+            <properties context=''>
+              <relation connection='excel-direct.16t68sl0mxyb9h10lgh921wl4nvv' name='il_locations1' table='[il_locations$]' type='table'>
+                <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
+                  <column datatype='real' name='longitude_origin' ordinal='0' />
+                  <column datatype='real' name='latitude_origin' ordinal='1' />
+                  <column datatype='string' name='city_lms_origin' ordinal='2' />
+                  <column datatype='string' name='city_heb_lms_origin' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='il_locations' id='il!locations_3B40EEF2C2E0408FB4B7208CC93B5AE7'>
+            <properties context=''>
+              <relation connection='excel-direct.1n02co612duku11bocqye0t7uwe0' name='il_locations' table='[il_locations$]' type='table'>
+                <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
+                  <column datatype='real' name='longitude_destination' ordinal='0' />
+                  <column datatype='real' name='latitude_destination' ordinal='1' />
+                  <column datatype='string' name='city_lms_destination' ordinal='2' />
+                  <column datatype='string' name='city_heb_lms_destination' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[RouteID]' />
+                <expression op='[Route ID]' />
+              </expression>
+              <expression op='='>
+                <expression op='[RouteDirection]' />
+                <expression op='[Route Direction]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='bus!data!with!var!and!size_169ACAE9F32A40F6AFC76FB86CAC1727' />
+            <second-end-point object-id='buses_pivoted.csv_701C756BCE1D4E93BF903E2B4BA0238D' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[OriginCityName]' />
+              <expression op='[city_heb_lms_origin]' />
+            </expression>
+            <first-end-point object-id='bus!data!with!var!and!size_169ACAE9F32A40F6AFC76FB86CAC1727' />
+            <second-end-point object-id='il!locations_27A8E35FD2A04BE5A5998254C316BD42' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[DestinationCityName]' />
+              <expression op='[city_heb_lms_destination]' />
+            </expression>
+            <first-end-point object-id='bus!data!with!var!and!size_169ACAE9F32A40F6AFC76FB86CAC1727' />
+            <second-end-point object-id='il!locations_3B40EEF2C2E0408FB4B7208CC93B5AE7' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Filter 1 (generated)' name='[Action1_5204BAA993AC47679DB968A9278D1CF4]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 2' type='sheet' worksheet='TopKVariance' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 2' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action2_D24854F05F504F24B0620CD073642F96]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 2' type='sheet' worksheet='TopKRiders' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 2' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Idan&apos;s Favourite'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column caption='AVG Pays Per Ride' datatype='real' name='[AVGPaysPerRide]' role='measure' type='quantitative' />
+            <column caption='RouteIDandDirection' datatype='string' name='[Calculation_1325747181590339584]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([RouteID]) + &quot; Direction &quot; + STR([RouteDirection])' />
+            </column>
+            <column caption='Day Of Week' datatype='string' name='[DayOfWeek]' role='dimension' type='nominal' />
+            <column caption='Destination' datatype='string' name='[DestinationCityName]' role='dimension' type='nominal' />
+            <column caption='Origin' datatype='string' name='[OriginCityName]' role='dimension' type='nominal' />
+            <column caption='Route Direction' datatype='integer' name='[RouteDirection]' role='measure' type='quantitative' />
+            <column caption='Route ID' datatype='integer' name='[RouteID]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Route Name' datatype='integer' name='[RouteName]' role='dimension' type='ordinal' />
+            <column caption='Service Type1' datatype='string' name='[Service Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Time]' role='dimension' type='nominal' />
+            <column-instance column='[AVGPaysPerRide]' derivation='Avg' name='[avg:AVGPaysPerRide:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DayOfWeek]' derivation='None' name='[none:DayOfWeek:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Time]' derivation='None' name='[none:Time:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_5204BAA993AC47679DB968A9278D1CF4]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+              <groupfilter function='level-members' level='[DestinationCityName]' />
+              <groupfilter function='level-members' level='[OriginCityName]' />
+              <groupfilter function='level-members' level='[RouteName]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_D24854F05F504F24B0620CD073642F96]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+              <groupfilter function='level-members' level='[DestinationCityName]' />
+              <groupfilter function='level-members' level='[OriginCityName]' />
+              <groupfilter function='level-members' level='[RouteName]' />
+              <groupfilter function='level-members' level='[Service Type]' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:DayOfWeek:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;WorkDay&quot;</bucket>
+              <bucket>&quot;Friday&quot;</bucket>
+              <bucket>&quot;Saturday&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]</column>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:DayOfWeek:nk] * [federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:AVGPaysPerRide:qk])</rows>
+        <cols>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Time:nk]</cols>
+      </table>
+      <simple-id uuid='{D185FC11-9A41-4C92-B441-924830251F29}' />
+    </worksheet>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7'>מפת ישראל עם חלוקה למטרופולינים</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
+            <column caption='Origin' datatype='string' name='[OriginCityName]' role='dimension' type='nominal' />
+            <column-instance column='[latitude_origin]' derivation='Avg' name='[avg:latitude_origin:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[longitude_origin]' derivation='Avg' name='[avg:longitude_origin:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Latitude Origin' datatype='real' name='[latitude_origin]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Longitude Origin' datatype='real' name='[longitude_origin]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
+            <column-instance column='[OriginCityName]' derivation='None' name='[none:OriginCityName:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:longitude_origin:qk]' field-type='quantitative' max='4099771.217366199' min='3646677.1617201059' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:latitude_origin:qk]' field-type='quantitative' max='3958739.010486945' min='3345729.415320999' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='background-color' value='#f9eee8' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <encodings>
+              <color column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' />
+              <lod column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:OriginCityName:nk]' />
+              <geometry column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>City Name:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:OriginCityName:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>The city&apos;s Metropolin:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:latitude_origin:qk]</rows>
+        <cols>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:longitude_origin:qk]</cols>
+      </table>
+      <simple-id uuid='{E80DB085-04E6-4382-AF0E-0FECB147452B}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7' fontsize='14'>היסטוגרמה של שונות מספר הנוסעים במהלך השבוע</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
+            <column aggregation='None' datatype='integer' name='[Variance Of Density (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='1' formula='[VarianceOfDensity]' peg='0' size='50' />
+            </column>
+            <column caption='Variance Of Density' datatype='real' name='[VarianceOfDensity]' role='measure' type='quantitative' />
+            <column-instance column='[VarianceOfDensity]' derivation='Count' name='[cnt:VarianceOfDensity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Variance Of Density (bin)]' derivation='None' name='[none:Variance Of Density (bin):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Variance Of Density (bin):qk]' field-type='quantitative' max='1000.0' min='-113.0' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:VarianceOfDensity:qk]' field-type='quantitative' max='5163' min='6' range-type='fixed' scope='rows' type='space' />
+            <format attr='height' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Variance Of Density (bin):qk]' value='56' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:VarianceOfDensity:qk]' scope='rows' value='Count of Lines' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Variance Of Density (bin):qk]' scope='cols' value='Variance Of Density' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' value='#ffffff' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='background-color' value='#dfe7e8' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='background-color' value='#e9f3f2' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:VarianceOfDensity:qk]</rows>
+        <cols>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Variance Of Density (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Variance Of Density (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{CAF78C38-8391-4374-B6D1-2681009B7CFC}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1' fontcolor='#4e79a7' fontsize='14'>מספר הנוסעים במציאות ביחס למקסימום המותר</run>
+            <run fontalignment='1'>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column caption='Bus Capacity' datatype='integer' name='[BusCapacity]' role='measure' type='quantitative' />
+            <column caption='avg passengers per allowed and freq' datatype='real' name='[Calculation_1371627601206587392]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([WeeklyPassengers]/[WeekyRides])/[BusCapacity]' />
+            </column>
+            <column caption='Weekly Passengers' datatype='real' name='[WeeklyPassengers]' role='measure' type='quantitative' />
+            <column caption='Weeky Rides' datatype='integer' name='[WeekyRides]' role='measure' type='quantitative' />
+            <column aggregation='None' datatype='integer' name='[avg passengers per allowed and freq (bin)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-1' formula='[Calculation_1371627601206587392]' peg='0' size='0.1' />
+            </column>
+            <column-instance column='[Calculation_1371627601206587392]' derivation='Count' name='[cnt:Calculation_1371627601206587392:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[avg passengers per allowed and freq (bin)]' derivation='None' name='[none:avg passengers per allowed and freq (bin):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:avg passengers per allowed and freq (bin):qk]' field-type='quantitative' max='7.0' min='0.0' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_1371627601206587392:qk]' field-type='quantitative' max='1300' min='-5' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_1371627601206587392:qk]' scope='rows' value='Count of Lines' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:avg passengers per allowed and freq (bin):qk]' scope='cols' value='passenges divided by the amount allowed ' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0' />
+                <format attr='mark-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_1371627601206587392:qk]</rows>
+        <cols>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:avg passengers per allowed and freq (bin):qk]</cols>
+        <show-full-range>
+          <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg passengers per allowed and freq (bin)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{A4B00B70-A222-40E8-ADE8-5EDA6F7B72A4}' />
+    </worksheet>
+    <worksheet name='TopKRiders'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+              <calculation class='tableau' formula='16' />
+              <range max='20' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column caption='Bus Capacity' datatype='integer' name='[BusCapacity]' role='measure' type='quantitative' />
+            <column caption='RouteIDandDirection' datatype='string' name='[Calculation_1325747181590339584]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([RouteID]) + &quot; Direction &quot; + STR([RouteDirection])' />
+            </column>
+            <column caption='avg passengers per allowed and freq' datatype='real' name='[Calculation_1371627601206587392]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='([WeeklyPassengers]/[WeekyRides])/[BusCapacity]' />
+            </column>
+            <column caption='Destination' datatype='string' name='[DestinationCityName]' role='dimension' type='nominal' />
+            <column caption='Origin' datatype='string' name='[OriginCityName]' role='dimension' type='nominal' />
+            <column caption='Route Direction' datatype='integer' name='[RouteDirection]' role='measure' type='quantitative' />
+            <column caption='Route ID' datatype='integer' name='[RouteID]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Route Name' datatype='integer' name='[RouteName]' role='dimension' type='ordinal' />
+            <column caption='Service Type1' datatype='string' name='[Service Type]' role='dimension' type='nominal' />
+            <column caption='Weekly Passengers' datatype='real' name='[WeeklyPassengers]' role='measure' type='quantitative' />
+            <column caption='Weeky Rides' datatype='integer' name='[WeekyRides]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1325747181590339584]' derivation='None' name='[none:Calculation_1325747181590339584:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DestinationCityName]' derivation='None' name='[none:DestinationCityName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[OriginCityName]' derivation='None' name='[none:OriginCityName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[RouteName]' derivation='None' name='[none:RouteName:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Service Type]' derivation='None' name='[none:Service Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_1371627601206587392]' derivation='Sum' name='[sum:Calculation_1371627601206587392:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_5204BAA993AC47679DB968A9278D1CF4]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+              <groupfilter function='level-members' level='[DestinationCityName]' />
+              <groupfilter function='level-members' level='[OriginCityName]' />
+              <groupfilter function='level-members' level='[RouteName]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]'>
+            <groupfilter count='[Parameters].[Parameter 1]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='AVG([Calculation_1371627601206587392])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Calculation_1325747181590339584:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]' direction='DESC' measure-to-sort-by='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[sum:Calculation_1371627601206587392:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]</column>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk] / ([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:RouteName:ok] / ([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Service Type:nk] / ([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:OriginCityName:nk] / [federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:DestinationCityName:nk]))))</rows>
+        <cols>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[sum:Calculation_1371627601206587392:qk]</cols>
+      </table>
+      <simple-id uuid='{AD0AF1C5-FF63-45C9-92BD-7EC39BFF8869}' />
+    </worksheet>
+    <worksheet name='TopKVariance'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+              <calculation class='tableau' formula='16' />
+              <range max='20' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+            <column caption='AVG Pays Per Ride' datatype='real' name='[AVGPaysPerRide]' role='measure' type='quantitative' />
+            <column caption='RouteIDandDirection' datatype='string' name='[Calculation_1325747181590339584]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='STR([RouteID]) + &quot; Direction &quot; + STR([RouteDirection])' />
+            </column>
+            <column caption='AVG pays per ride RANGE' datatype='real' name='[Calculation_1325747181621391361]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='MAX([AVGPaysPerRide]) - MIN([AVGPaysPerRide])' />
+            </column>
+            <column caption='Destination' datatype='string' name='[DestinationCityName]' role='dimension' type='nominal' />
+            <column caption='Origin' datatype='string' name='[OriginCityName]' role='dimension' type='nominal' />
+            <column caption='Route Direction' datatype='integer' name='[RouteDirection]' role='measure' type='quantitative' />
+            <column caption='Route ID' datatype='integer' name='[RouteID]' role='dimension' type='ordinal' />
+            <column aggregation='Sum' caption='Route Name' datatype='integer' name='[RouteName]' role='dimension' type='ordinal' />
+            <column caption='Service Type1' datatype='string' name='[Service Type]' role='dimension' type='nominal' />
+            <column caption='Variance Of Density' datatype='real' name='[VarianceOfDensity]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_1325747181590339584]' derivation='None' name='[none:Calculation_1325747181590339584:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DestinationCityName]' derivation='None' name='[none:DestinationCityName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[OriginCityName]' derivation='None' name='[none:OriginCityName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[RouteName]' derivation='None' name='[none:RouteName:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[VarianceOfDensity]' derivation='Sum' name='[sum:VarianceOfDensity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1325747181621391361]' derivation='User' name='[usr:Calculation_1325747181621391361:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_D24854F05F504F24B0620CD073642F96]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+              <groupfilter function='level-members' level='[DestinationCityName]' />
+              <groupfilter function='level-members' level='[OriginCityName]' />
+              <groupfilter function='level-members' level='[RouteName]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_D24854F05F504F24B0620CD073642F96]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Calculation_1325747181590339584]' />
+              <groupfilter function='level-members' level='[DestinationCityName]' />
+              <groupfilter function='level-members' level='[OriginCityName]' />
+              <groupfilter function='level-members' level='[RouteName]' />
+              <groupfilter function='level-members' level='[Service Type]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]'>
+            <groupfilter count='[Parameters].[Parameter 1]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='[Calculation_1325747181621391361]' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:Calculation_1325747181590339584:nk]' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-manual-selection-is-empty='true' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]' direction='DESC' measure-to-sort-by='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[usr:Calculation_1325747181621391361:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk]</column>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name)]</column>
+            <column>[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (RouteIDandDirection,Destination,Origin,Route Name,Service Type1)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[sum:VarianceOfDensity:qk]' value='53' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[sum:VarianceOfDensity:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[usr:Calculation_1325747181621391361:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1325747181590339584:nk] / ([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:RouteName:ok] / ([federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:OriginCityName:nk] / [federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:DestinationCityName:nk])))</rows>
+        <cols>([federated.0oyf0b41jtdssw15wczvj0unu1e7].[sum:VarianceOfDensity:qk] + [federated.0oyf0b41jtdssw15wczvj0unu1e7].[usr:Calculation_1325747181621391361:qk])</cols>
+      </table>
+      <simple-id uuid='{10B6DDB9-FD28-4EF5-A90F-ABA81E65075B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>בחינה כללית של בעיות מערכת התחבורה בישראל ביחס למטרופולינים
+</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#fad1de' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='border-color' value='#ffffff' />
+          <format attr='border-width' value='0' />
+          <format attr='border-style' value='none' />
+          <format attr='background-color' value='#ff78ae' />
+        </style-rule>
+      </style>
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='bus_data_with_var_and_size+ (Multiple Connections)' name='federated.0oyf0b41jtdssw15wczvj0unu1e7' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
+        <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
+        <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='14' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='5250' id='15' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92750' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='6250'>
+              <zone h='92750' id='5' type-v2='layout-basic' w='98400' x='800' y='6250'>
+                <zone h='92750' id='3' name='Sheet 1' w='51947' x='47253' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46375' id='10' name='Sheet 2' w='46453' x='800' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='46375' id='12' name='Sheet 3' w='46453' x='800' y='52625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='21250' id='11' name='Sheet 2' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' show-title='false' type-v2='filter' w='14900' x='50200' y='23500' />
+        <zone h='16375' id='9' name='Sheet 1' pane-specification-id='0' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' type-v2='color' w='14000' x='50900' y='46000' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontalignment='1'>בחינה כללית של בעיות מערכת התחבורה בישראל ביחס למטרופולינים
+</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='43' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='42' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='5250' id='15' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='21250' id='11' mode='checkdropdown' name='Sheet 2' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' show-title='false' type-v2='filter' w='14900' x='50200' y='23500'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46375' id='10' is-fixed='true' name='Sheet 2' w='46453' x='800' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='92750' id='3' is-fixed='true' name='Sheet 1' w='51947' x='47253' y='6250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16375' id='9' name='Sheet 1' pane-specification-id='0' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' type-v2='color' w='14000' x='50900' y='46000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='46375' id='12' is-fixed='true' name='Sheet 3' w='46453' x='800' y='52625'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{D3953DE6-8E8D-4071-B50E-B815AD6DB5A6}' />
+    </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 2'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='16'>
+          <calculation class='tableau' formula='16' />
+          <range max='20' min='1' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98214' id='12' param='horz' type-v2='layout-flow' w='99064' x='468' y='893'>
+            <zone h='98214' id='5' param='vert' type-v2='layout-flow' w='99064' x='468' y='893'>
+              <zone h='98214' id='6' type-v2='layout-basic' w='99064' x='468' y='893'>
+                <zone h='98214' id='7' param='horz' type-v2='layout-flow' w='99064' x='468' y='893'>
+                  <zone fixed-size='749' h='98214' id='9' is-fixed='true' param='vert' type-v2='layout-flow' w='43827' x='468' y='893'>
+                    <zone h='5803' id='13' mode='slider' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='43827' x='468' y='893'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='410' h='46652' id='10' is-fixed='true' name='TopKVariance' w='43827' x='468' y='6696'>
+                      <layout-cache has-max-size-w='true' maxwidth='741' minwidth='741' type-h='fixed' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='402' h='45759' id='14' is-fixed='true' name='TopKRiders' w='43827' x='468' y='53348'>
+                      <layout-cache minwidth='542' type-h='fixed' type-w='scalable' />
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone h='98214' id='8' name='Idan&apos;s Favourite' show-title='false' w='55236' x='44295' y='893'>
+                    <layout-cache minheight='385' type-h='scalable' type-w='cell' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{9BD83FF6-E38E-49E8-9CCD-0A6757A88B46}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <floating-toolbar-visibility value='1' />
+        <map-scale-visibility value='0' />
+        <_.fcp.LayerControlWidget.true...layer-control toolbar-button-enabled='false' />
+      </viewpoint>
+      <simple-id uuid='{1C4B16E2-16D2-4078-9011-29D7541DBFA1}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{10D3110A-2443-460C-8B85-7D2353D33E55}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card AVG='true' KURTOSIS='false' MAX='false' MEDIAN='true' MIN='false' QUART1='false' QUART3='false' SKEWNESS='false' STDEV='true' SUM='false' type='summary' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{23568B0C-A3D1-4664-A054-7F90624E58FD}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+          <floating-toolbar-visibility value='2' />
+          <map-scale-visibility value='0' />
+          <default-map-tool-selection tool='4' />
+          <map-navigation value='1' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 3'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='4' />
+        </viewpoint>
+      </viewpoints>
+      <active id='12' />
+      <simple-id uuid='{5CDDCC45-B9EB-4793-96E7-7514CD4A139E}' />
+    </window>
+    <window class='worksheet' name='Idan&apos;s Favourite' tab-color='#a65200'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{58569176-E2EA-4A95-8616-6087D93B187A}' />
+    </window>
+    <window class='worksheet' name='TopKVariance' tab-color='#a65200'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{74F1F8D5-2165-445C-B987-94C7DAD39B93}' />
+    </window>
+    <window class='worksheet' name='TopKRiders' tab-color='#a65200'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{92DAD7F7-9ACD-4C41-9D65-67296422BDAE}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 2' tab-color='#a65200'>
+      <viewpoints>
+        <viewpoint name='Idan&apos;s Favourite'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='TopKRiders' />
+        <viewpoint name='TopKVariance' />
+      </viewpoints>
+      <active id='14' />
+      <simple-id uuid='{4DFD008D-D695-42AF-B36E-AB66456BB450}' />
+    </window>
+  </windows>
+</workbook>
