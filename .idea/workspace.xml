@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8df52bb4-1037-4a5b-ac1c-4cded544cec4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prep_for_dash2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bus_data_with_var_and_size2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cap_line_original.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/cap_line_original.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dash1.twbx" beforeDir="false" afterPath="$PROJECT_DIR$/dash1.twbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard2.twbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/~dash1__10660.twbr" beforeDir="false" afterPath="$PROJECT_DIR$/~dash1__10660.twbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard2.twbx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard2.twbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/~dash1__16428.twbr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/~dash1__17176.twbr" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +32,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,6 +54,8 @@
       <option name="presentableId" value="Default" />
       <updated>1688382247536</updated>
       <workItem from="1688382248706" duration="1830000" />
+      <workItem from="1688490469484" duration="6000" />
+      <workItem from="1688566759548" duration="23000" />
     </task>
     <servers />
   </component>
