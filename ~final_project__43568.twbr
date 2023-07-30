@@ -5106,14 +5106,6 @@
               <column datatype='string' name='city_heb_lms_origin' ordinal='3' />
             </columns>
           </relation>
-          <relation connection='excel-direct.1n02co612duku11bocqye0t7uwe0' name='il_locations' table='[il_locations$]' type='table'>
-            <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
-              <column datatype='real' name='longitude_destination' ordinal='0' />
-              <column datatype='real' name='latitude_destination' ordinal='1' />
-              <column datatype='string' name='city_lms_destination' ordinal='2' />
-              <column datatype='string' name='city_heb_lms_destination' ordinal='3' />
-            </columns>
-          </relation>
         </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
         <cols>
           <map key='[AVG Passengers Per Week]' value='[buses_pivoted.csv].[AVG Passengers Per Week]' />
@@ -5201,13 +5193,9 @@
           <map key='[WorkDay - 15:00-18:59]' value='[Sheet1].[WorkDay - 15:00-18:59]' />
           <map key='[WorkDay - 19:00-23:59]' value='[Sheet1].[WorkDay - 19:00-23:59]' />
           <map key='[Year]' value='[buses_pivoted.csv].[Year]' />
-          <map key='[city_heb_lms_destination]' value='[il_locations].[city_heb_lms_destination]' />
           <map key='[city_heb_lms_origin]' value='[il_locations1].[city_heb_lms_origin]' />
-          <map key='[city_lms_destination]' value='[il_locations].[city_lms_destination]' />
           <map key='[city_lms_origin]' value='[il_locations1].[city_lms_origin]' />
-          <map key='[latitude_destination]' value='[il_locations].[latitude_destination]' />
           <map key='[latitude_origin]' value='[il_locations1].[latitude_origin]' />
-          <map key='[longitude_destination]' value='[il_locations].[longitude_destination]' />
           <map key='[longitude_origin]' value='[il_locations1].[longitude_origin]' />
           <map key='[range]' value='[Sheet1].[range]' />
           <map key='[year]' value='[Sheet1].[year]' />
@@ -5247,20 +5235,6 @@
             <remote-name />
             <remote-type>0</remote-type>
             <parent-name>[il_locations1]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='integer' name='context'>0</attribute>
-              <attribute datatype='string' name='gridOrigin'>&quot;A1:D1262:no:A1:D1262:0&quot;</attribute>
-              <attribute datatype='boolean' name='header'>true</attribute>
-              <attribute datatype='integer' name='outcome'>6</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[il_locations]</parent-name>
             <remote-alias />
             <aggregation>Count</aggregation>
             <contains-null>true</contains-null>
@@ -6628,70 +6602,6 @@
             </attributes>
             <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[il!locations_883E86B325B04F66B67A63ADD7162AA4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
           </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>longitude_destination</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[longitude_destination]</local-name>
-            <parent-name>[il_locations]</parent-name>
-            <remote-alias>longitude_destination</remote-alias>
-            <ordinal>91</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[il!locations_D9191755E7754E629BB7D3BD987F9055]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>latitude_destination</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[latitude_destination]</local-name>
-            <parent-name>[il_locations]</parent-name>
-            <remote-alias>latitude_destination</remote-alias>
-            <ordinal>92</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <precision>15</precision>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[il!locations_D9191755E7754E629BB7D3BD987F9055]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>city_lms_destination</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[city_lms_destination]</local-name>
-            <parent-name>[il_locations]</parent-name>
-            <remote-alias>city_lms_destination</remote-alias>
-            <ordinal>93</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_RUS_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[il!locations_D9191755E7754E629BB7D3BD987F9055]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>city_heb_lms_destination</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[city_heb_lms_destination]</local-name>
-            <parent-name>[il_locations]</parent-name>
-            <remote-alias>city_heb_lms_destination</remote-alias>
-            <ordinal>94</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_RUS_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[il!locations_D9191755E7754E629BB7D3BD987F9055]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
-          </metadata-record>
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
@@ -6718,11 +6628,11 @@
       <column caption='BinsForPassengesPerAllowedAndFrequency' datatype='real' name='[Calculation_1476336301124755459]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='int([Calculation_1371627601206587392]/0.1)*0.1' />
       </column>
-      <column caption='BinsForRatioPlus0.1' datatype='integer' datatype-customized='true' name='[Calculation_3065825499575463937]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='INT([Calculation_1476336301124755459] + 0.1)' />
+      <column caption='BinsForRatioPlus0.1' datatype='real' datatype-customized='true' name='[Calculation_3065825499575463937]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1476336301124755459] + 0.1' />
       </column>
       <column caption='BinsForRange' datatype='integer' name='[Calculation_3065825499576451074]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='int([range]/5)*5' />
+        <calculation class='tableau' formula='int(int([range]/5)*5)' />
       </column>
       <column caption='BinsForRangePlus5' datatype='integer' name='[Calculation_3065825499576840195]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='INT([Calculation_3065825499576451074]+5)' />
@@ -6789,17 +6699,12 @@
       <_.fcp.ObjectModelTableType.true...column caption='Sheet1' datatype='table' name='[__tableau_internal_object_id__].[Sheet1_F26953A79D174BE9BCBDBA203206A8E2]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='buses_pivoted.csv' datatype='table' name='[__tableau_internal_object_id__].[buses_pivoted.csv_9872D1608A3B4DB78924A97852882986]' role='measure' type='quantitative' />
       <_.fcp.ObjectModelTableType.true...column caption='il_locations1' datatype='table' name='[__tableau_internal_object_id__].[il!locations_883E86B325B04F66B67A63ADD7162AA4]' role='measure' type='quantitative' />
-      <_.fcp.ObjectModelTableType.true...column caption='il_locations' datatype='table' name='[__tableau_internal_object_id__].[il!locations_D9191755E7754E629BB7D3BD987F9055]' role='measure' type='quantitative' />
       <column aggregation='None' datatype='integer' name='[avg passengers per allowed and freq (bin)]' role='dimension' type='quantitative'>
         <calculation class='bin' decimals='-1' formula='[Calculation_1371627601206587392]' peg='0' size='0.1' />
       </column>
-      <column caption='City Heb Lms Destination' datatype='string' name='[city_heb_lms_destination]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column caption='City Heb Lms Origin' datatype='string' name='[city_heb_lms_origin]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
-      <column caption='City Lms Destination' datatype='string' name='[city_lms_destination]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
       <column caption='City Lms Origin' datatype='string' name='[city_lms_origin]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
-      <column aggregation='Avg' caption='Latitude Destination' datatype='real' name='[latitude_destination]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
       <column aggregation='Avg' caption='Latitude Origin' datatype='real' name='[latitude_origin]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
-      <column aggregation='Avg' caption='Longitude Destination' datatype='real' name='[longitude_destination]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
       <column aggregation='Avg' caption='Longitude Origin' datatype='real' name='[longitude_origin]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
       <column caption='Range' datatype='real' name='[range]' role='measure' type='quantitative' />
       <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
@@ -7046,18 +6951,6 @@
               </relation>
             </properties>
           </object>
-          <object caption='il_locations' id='il!locations_D9191755E7754E629BB7D3BD987F9055'>
-            <properties context=''>
-              <relation connection='excel-direct.1n02co612duku11bocqye0t7uwe0' name='il_locations' table='[il_locations$]' type='table'>
-                <columns gridOrigin='A1:D1262:no:A1:D1262:0' header='yes' outcome='6'>
-                  <column datatype='real' name='longitude_destination' ordinal='0' />
-                  <column datatype='real' name='latitude_destination' ordinal='1' />
-                  <column datatype='string' name='city_lms_destination' ordinal='2' />
-                  <column datatype='string' name='city_heb_lms_destination' ordinal='3' />
-                </columns>
-              </relation>
-            </properties>
-          </object>
         </objects>
         <relationships>
           <relationship>
@@ -7081,14 +6974,6 @@
             </expression>
             <first-end-point object-id='Sheet1_F26953A79D174BE9BCBDBA203206A8E2' />
             <second-end-point object-id='il!locations_883E86B325B04F66B67A63ADD7162AA4' />
-          </relationship>
-          <relationship>
-            <expression op='='>
-              <expression op='[DestinationCityName]' />
-              <expression op='[city_heb_lms_destination]' />
-            </expression>
-            <first-end-point object-id='Sheet1_F26953A79D174BE9BCBDBA203206A8E2' />
-            <second-end-point object-id='il!locations_D9191755E7754E629BB7D3BD987F9055' />
           </relationship>
         </relationships>
       </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -7568,8 +7453,8 @@
             <column caption='מזהה קו וכיוון' datatype='string' name='[routeID_and_direction]' role='dimension' type='nominal' />
             <column-instance column='[passengers_per_allowed]' derivation='Sum' name='[sum:passengers_per_allowed:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' context='true' filter-group='3'>
-            <groupfilter function='member' level='[none:Metropolin:nk]' member='&quot;בין מחוזי&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' context='true' filter-group='4'>
+            <groupfilter function='level-members' level='[none:Metropolin:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:routeID_and_direction:nk]'>
             <groupfilter count='[Parameters].[Parameter 1]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
@@ -7668,7 +7553,7 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/database.png' />
               </style-rule>
             </style>
           </pane>
@@ -7704,14 +7589,14 @@
             </encodings>
             <customized-tooltip>
               <formatted-text>
-                <run fontalignment='2' fontsize='12'>ההנתונים נלקחו מהאתר ***.</run>
+                <run fontalignment='2' fontsize='12'>ההנתונים נלקחו מהאתר OECD  ilabrary.</run>
                 <run fontalignment='2'>Æ&#10;</run>
                 <run fontalignment='2' fontsize='12'>הקליקי כדי לעבור אל האתר.</run>
               </formatted-text>
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/database.png' />
               </style-rule>
             </style>
           </pane>
@@ -7756,7 +7641,7 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/info.png' />
                 <format attr='mark-color' value='#ffffff' />
               </style-rule>
             </style>
@@ -7800,7 +7685,7 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/info.png' />
               </style-rule>
             </style>
           </pane>
@@ -7845,7 +7730,7 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/info.png' />
               </style-rule>
             </style>
           </pane>
@@ -7890,7 +7775,7 @@
             </customized-tooltip>
             <style>
               <style-rule element='mark'>
-                <format attr='shape' value='info button/info.png' />
+                <format attr='shape' value='project/info.png' />
               </style-rule>
             </style>
           </pane>
@@ -8011,14 +7896,15 @@
             <column caption='BinsForPassengesPerAllowedAndFrequency' datatype='real' name='[Calculation_1476336301124755459]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='int([Calculation_1371627601206587392]/0.1)*0.1' />
             </column>
-            <column caption='BinsForRatioPlus0.1' datatype='integer' datatype-customized='true' name='[Calculation_3065825499575463937]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='INT([Calculation_1476336301124755459] + 0.1)' />
+            <column caption='BinsForRatioPlus0.1' datatype='real' datatype-customized='true' name='[Calculation_3065825499575463937]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_1476336301124755459] + 0.1' />
             </column>
             <column caption='Metropolin1' datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
             <column caption='Weekly Passengers' datatype='real' name='[WeeklyPassengers]' role='measure' type='quantitative' />
             <column caption='Weeky Rides' datatype='integer' name='[WeekyRides]' role='measure' type='quantitative' />
-            <column-instance column='[Calculation_3065825499575463937]' derivation='Avg' name='[avg:Calculation_3065825499575463937:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1371627601206587392]' derivation='Count' name='[cnt:Calculation_1371627601206587392:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1476336301124755459]' derivation='Median' name='[med:Calculation_1476336301124755459:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_3065825499575463937]' derivation='Median' name='[med:Calculation_3065825499575463937:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1476336301124755459]' derivation='None' name='[none:Calculation_1476336301124755459:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
           </datasource-dependencies>
@@ -8074,15 +7960,19 @@
             <mark class='Bar' />
             <mark-sizing custom-mark-size-in-axis-units='0.10000000000000001' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='true' />
             <encodings>
-              <tooltip column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:Calculation_3065825499575463937:qk]' />
+              <tooltip column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499575463937:qk]' />
+              <tooltip column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_1476336301124755459:qk]' />
             </encodings>
             <reference-line axis-column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1476336301124755459:qk]' enable-instant-analytics='true' formula='constant' id='refline3' label-type='value' scope='per-table' tooltip='' tooltip-type='custom' value='1.0' value-column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1476336301124755459:qk]' z-order='1' />
             <customized-tooltip>
               <formatted-text>
                 <run fontalignment='2'>יש </run>
                 <run bold='true' fontalignment='2' fontcolor='#6a2da7' fontname='Tableau Bold' fontsize='12'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_1371627601206587392:qk]> ]]></run>
-                <run fontalignment='2'><![CDATA[קווים עבורם היחס בין מספר הנוסעים הממוצע 
-למספר הנוסעים המותר נמצא בין <[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1476336301124755459:qk]> לבין <[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:Calculation_3065825499575463937:qk]>]]></run>
+                <run fontalignment='2'>קווים עבורם היחס בין מספר הנוסעים הממוצע 
+למספר הנוסעים המותר נמצא בין </run>
+                <run bold='true' fontalignment='2' fontname='Tableau Bold'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Calculation_1476336301124755459:qk]> ]]></run>
+                <run fontalignment='2'>לבין </run>
+                <run bold='true' fontalignment='2' fontname='Tableau Bold'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499575463937:qk]>]]></run>
               </formatted-text>
             </customized-tooltip>
             <style>
@@ -8234,11 +8124,13 @@
                 <alias key='&quot;WorkDay&quot;' value='יום חול' />
               </aliases>
             </column>
+            <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
             <column aggregation='Sum' caption='קו' datatype='integer' name='[RouteName]' role='dimension' type='ordinal' />
             <column datatype='string' name='[Time]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_415457109378011143]' derivation='Attribute' name='[attr:Calculation_415457109378011143:nk]' pivot='key' type='nominal' />
             <column-instance column='[AVGPaysPerRide]' derivation='Avg' name='[avg:AVGPaysPerRide:qk]' pivot='key' type='quantitative' />
             <column-instance column='[DayOfWeek]' derivation='None' name='[none:DayOfWeek:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
             <column-instance column='[Time]' derivation='None' name='[none:Time:nk]' pivot='key' type='nominal' />
             <column caption='מזהה קו וכיוון' datatype='string' name='[routeID_and_direction]' role='dimension' type='nominal' />
             <column-instance column='[AVGPaysPerRide]' derivation='Sum' name='[sum:AVGPaysPerRide:qk]' pivot='key' type='quantitative' />
@@ -8272,8 +8164,12 @@
               <bucket>&quot;Saturday&quot;</bucket>
             </dictionary>
           </manual-sort>
+          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' context='true' filter-group='4'>
+            <groupfilter function='level-members' level='[none:Metropolin:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='quantitative' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]' included-values='in-range' />
           <slices>
+            <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]</column>
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[avg:AVGPaysPerRide:qk]</column>
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (Route Name,routeID and direction)]</column>
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (routeID and direction)]</column>
@@ -8443,7 +8339,7 @@
           </datasources>
           <datasource-dependencies datasource='federated.0oyf0b41jtdssw15wczvj0unu1e7'>
             <column caption='BinsForRange' datatype='integer' name='[Calculation_3065825499576451074]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='int([range]/5)*5' />
+              <calculation class='tableau' formula='int(int([range]/5)*5)' />
             </column>
             <column caption='BinsForRangePlus5' datatype='integer' name='[Calculation_3065825499576840195]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='INT([Calculation_3065825499576451074]+5)' />
@@ -8519,7 +8415,11 @@
                 <run>יש </run>
                 <run fontcolor='#6a2da7' fontname='Tableau Bold' fontsize='12'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_3065825499576451074:qk]>]]></run>
                 <run bold='true' fontcolor='#6a2da7' fontname='Tableau Bold' fontsize='12'>Æ </run>
-                <run><![CDATA[קווים עבורם טווח מספר הנוסעים בנסיעה נמצא בין <[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499576451074:qk]> לבין <[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499576840195:qk]> נוסעים]]></run>
+                <run>קווים עבורם טווח מספר הנוסעים בנסיעה נמצא בין </run>
+                <run fontname='Tableau Bold'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499576451074:qk]>]]></run>
+                <run> לבין </run>
+                <run fontname='Tableau Bold'><![CDATA[<[federated.0oyf0b41jtdssw15wczvj0unu1e7].[med:Calculation_3065825499576840195:qk]>]]></run>
+                <run> נוסעים</run>
               </formatted-text>
             </customized-tooltip>
             <style>
@@ -8573,8 +8473,8 @@
             <column caption='מזהה קו וכיוון' datatype='string' name='[routeID_and_direction]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_415457109297471490]' derivation='User' name='[usr:Calculation_415457109297471490:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' context='true' filter-group='3'>
-            <groupfilter function='member' level='[none:Metropolin:nk]' member='&quot;בין מחוזי&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' context='true' filter-group='4'>
+            <groupfilter function='level-members' level='[none:Metropolin:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:routeID_and_direction:nk]'>
             <groupfilter count='[Parameters].[Parameter 1]' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
@@ -8937,8 +8837,8 @@
         <zone h='22914' id='11' name='range histogram' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' type-v2='filter' w='14250' x='84000' y='35484' />
         <zone h='23125' id='9' name='matropolin map' pane-specification-id='0' param='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Metropolin:nk]' type-v2='color' w='14300' x='84100' y='10375' />
         <zone h='42825' id='99' is-scaled='1' param='Image/road drawing.png' type-v2='bitmap' w='21167' x='82000' y='58287' />
-        <zone h='4672' id='175' name='info for dash1 range' show-title='false' w='5083' x='41500' y='13014' />
-        <zone h='4783' id='177' name='info for dash1 ratio' show-title='false' w='3917' x='42500' y='58954' />
+        <zone h='5562' id='175' name='info for dash1 range' show-title='false' w='5833' x='40750' y='13014' />
+        <zone h='5562' id='177' name='info for dash1 ratio' show-title='false' w='5500' x='40917' y='58954' />
         <zone h='6897' id='178' name='data for buses' show-title='false' w='6250' x='500' y='779' />
       </zones>
       <devicelayouts>
@@ -9388,70 +9288,10 @@
               <zone h='93985' id='1' param='vert' removable='false' type-v2='layout-flow' w='98684' x='658' y='5263'>
                 <zone h='9492' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98684' x='658' y='5263' />
                 <zone h='84493' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98684' x='658' y='14755'>
-                  <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                  <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
                     <story-points>
                       <story-point caption='התחבורה הציבורית בישראל לעומת מדינות אחרות' captured-sheet='ranked countries dashboard' id='1'>
-                        <currentDeltas>
-                          <worksheet name='ranked countries'>
-                            <annotations>
-                              <annotation class='point' delta-type='edited' id='1' mark-position='1' pullback='0' text-width='358'>
-                                <formatted-text>
-                                  <run fontalignment='1' fontsize='12'>ישראל מדורגת מקום שישי!</run>
-                                  <run fontalignment='1'>Æ&#10;</run>
-                                  <run fontalignment='1' fontsize='12'>אז לכאורה מערך האוטובוסים בישראל מתפקד טוב.</run>
-                                  <run fontalignment='1'>Æ&#10;</run>
-                                  <run bold='true' fontalignment='1' fontsize='14'>האמנם?</run>
-                                </formatted-text>
-                                <point>
-                                  <visual-coordinate class='mark'>
-                                    <tuple-reference>
-                                      <tuple-descriptor>
-                                        <pane-descriptor>
-                                          <x-fields>
-                                            <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[sum:Value:qk]</field>
-                                          </x-fields>
-                                          <y-fields>
-                                            <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[none:Country:nk]</field>
-                                          </y-fields>
-                                        </pane-descriptor>
-                                        <columns>
-                                          <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[none:Country:nk]</field>
-                                          <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[sum:Value:qk]</field>
-                                        </columns>
-                                      </tuple-descriptor>
-                                      <tuple>
-                                        <value>&quot;Israel&quot;</value>
-                                        <value>4.0499786416061996</value>
-                                      </tuple>
-                                    </tuple-reference>
-                                  </visual-coordinate>
-                                </point>
-                                <body x='363' y='117' />
-                              </annotation>
-                            </annotations>
-                          </worksheet>
-                        </currentDeltas>
                         <capturedDeltas>
-                          <worksheet name='data for countries'>
-                            <selection-collection>
-                              <tuple-selection>
-                                <tuple-reference>
-                                  <tuple-descriptor>
-                                    <pane-descriptor>
-                                      <x-fields />
-                                      <y-fields />
-                                    </pane-descriptor>
-                                    <columns>
-                                      <field>[federated.0sz1fqj1l82gid1fdl5pt1rzm1sm].[usr:Calculation_311592851097403392:qk]</field>
-                                    </columns>
-                                  </tuple-descriptor>
-                                  <tuple>
-                                    <value>1</value>
-                                  </tuple>
-                                </tuple-reference>
-                              </tuple-selection>
-                            </selection-collection>
-                          </worksheet>
                           <worksheet name='ranked countries'>
                             <annotations>
                               <annotation class='point' delta-type='edited' id='1' mark-position='1' pullback='0' text-width='358'>
@@ -9505,6 +9345,38 @@
                         </capturedDeltas>
                       </story-point>
                       <story-point caption='מדדים המייצגים בעיות בקווי אוטובוס בישראל' captured-sheet='Dashboard 1' id='2'>
+                        <currentDeltas>
+                          <worksheet name='matropolin map'>
+                            <style delta-type='added'>
+                              <style-rule element='axis'>
+                                <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:latitude_origin:qk]' field-type='quantitative' projection='EPSG:3857' scope='rows' type='space' />
+                                <encoding attr='space' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[avg:longitude_origin:qk]' field-type='quantitative' projection='EPSG:3857' scope='cols' type='space' />
+                              </style-rule>
+                            </style>
+                          </worksheet>
+                          <worksheet name='number of passangers in relation to the max'>
+                            <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (Metropolin,Origin)]'>
+                              <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                                <groupfilter function='level-members' level='[Metropolin]' />
+                                <groupfilter function='level-members' level='[OriginCityName]' />
+                              </groupfilter>
+                            </filter>
+                            <style delta-type='added'>
+                              <style-rule element='annotation'>
+                                <format attr='fill-color' id='addedDelta_annotation_0' value='#ac050884' />
+                              </style-rule>
+                            </style>
+                          </worksheet>
+                          <worksheet name='range histogram'>
+                            <filter class='categorical' column='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[Action (Metropolin,Origin)]'>
+                              <groupfilter function='crossjoin' user:ui-enumeration='all' user:ui-marker='enumerate'>
+                                <groupfilter function='level-members' level='[Metropolin]' />
+                                <groupfilter function='level-members' level='[OriginCityName]' />
+                              </groupfilter>
+                            </filter>
+                            <selection-collection />
+                          </worksheet>
+                        </currentDeltas>
                         <capturedDeltas>
                           <worksheet name='matropolin map'>
                             <style delta-type='added'>
@@ -10215,10 +10087,10 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='9' />
+      <active id='-1' />
       <simple-id uuid='{5CDDCC45-B9EB-4793-96E7-7514CD4A139E}' />
     </window>
-    <window class='worksheet' name='passengers histogram by hour'>
+    <window class='worksheet' maximized='true' name='passengers histogram by hour'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -10327,12 +10199,12 @@
           <default-map-tool-selection tool='2' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='73' />
       <simple-id uuid='{93036830-165B-471B-A390-E4D363526C77}' />
     </window>
     <window class='dashboard' name='Story 1'>
       <viewpoints />
-      <active id='-1' />
+      <active id='5' />
       <simple-id uuid='{1B4D1583-239E-454D-82AE-22147B2D7251}' />
     </window>
     <window class='worksheet' name='ranked countries'>
@@ -10721,7 +10593,7 @@
       </viewpoint>
       <simple-id uuid='{71FFC0AE-B4C2-4C4B-9D64-D48B8663273A}' />
     </window>
-    <window class='worksheet' maximized='true' name='data for buses'>
+    <window class='worksheet' name='data for buses'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -11151,7 +11023,24 @@
         HNM4P7ILlCazhIt77m8UzWIXeTMGXBDybRAOwPr/E12zlh74F4PNDHV2gt3MAAAAAElFTkSu
         QmCC
       </shape>
-      <shape name='info button/info.png'>
+      <shape name='project/database.png'>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwY
+        AAAC10lEQVRoge3ay29MYRjH8c+IoEFVXRISNhrismDntrCV2LqEJUFTfwJb7LBD2LvskJC4
+        JS6xtBVh61qJtoJKOBbvOzrtnGnPmZ7pTOR8k5NJz3nO+/7e88x7fs/bdyqmz3psRh/WxM/l
+        mIcFWBjjRvANP/ERb+PxBi/xqgAtuViCftzEByQFHR9wA8djH7mo5IjdjSPYgzk15z/hBV4L
+        T/cN3uEHhoUsELLTjS6sFDLXh7XYJmSxyi/cwRXczTOgydiGZ8ae3G/cF57choL6qMS2+vEg
+        9lHt71nU0DRduIw/scFBnMSq6TSakVU4FftMooYLmJ23oW5jWfiJ01hUmMzs9OAMRqOWe1Fb
+        JirC9zMR3i47WiAwLzsFLQluyzi3D8QbRoSJ2CmsFTQl2JflhscxuL+FopplQND2MEvwUAzu
+        aaWiJlksaPs68cKslODMk6kNVOdG3YsnbSBVDrVGy7Q4mCe4akSdPNmTLDfU1j+fsatVynKw
+        XX1dNyXVwAfxc1QwpXZM/h6cNWaI9zUxkNk4X/P3oFA2rC5ebx2rjS9REpyLmnIPpMoOPK85
+        /1t4jw9go3wVdCMq2BTbfKS+aNw+ib5/DUwkaXBtNw4LZfzcmvOD0sv474In1ZbxizAfK9SX
+        8Utr2hwVyqSr6sv4RvpSBzJZ6npxDNfx3vgJOJ3jHa7haOwjl748GWnEOmwRlrnVpe4yYRnQ
+        LWSCkJlhYcH1Sf1S93XG/nJnpBNLlF4NMlI6exsonb109gIond2EwLRrpbNnPEpnnyywdPYW
+        Uzp76ewFUTq7lMDS2ZXOXoyzDwmOvFjKf71TmEln78WXqHHKl89jYcQDGRqeaU4I2jLtj+zX
+        +Ya4N8sNFWGfLhH27Xa2TFp2avcQb8nxpuzGU51niE80sRHVhUvG77O3yxD/4KLw+5amSfvl
+        w0wa4lNszdJAVjrFEAuj3YaYShFfi5le6v7f/AUuSfDOgXwVlAAAAABJRU5ErkJggg==
+      </shape>
+      <shape name='project/info.png'>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAACXBIWXMAAA3lAAAN5QHm6mmv
         AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAIABJREFUeJztnWuQXeV1
         pp9zulstCUndtGRhhIUQF1tAwHiCwQZDYLgJiE0ZDHKcH/ElsT3lAceXVDI/Ylcy5XKmUok9
