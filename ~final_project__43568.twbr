@@ -36,8 +36,8 @@
   <datasources>
     <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
       <aliases enabled='yes' />
-      <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='9'>
-        <calculation class='tableau' formula='9' />
+      <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+        <calculation class='tableau' formula='10' />
         <range max='10' min='1' />
       </column>
       <column caption='number of countries to show' datatype='integer' name='[Parameter 2]' param-domain-type='range' role='measure' type='quantitative' value='20'>
@@ -7108,20 +7108,20 @@
     </action>
     <action caption='Filter1' name='[Action2_465DA1FE17424818A410CF2620338AF5]'>
       <activation auto-clear='true' type='on-select' />
-      <source dashboard='dash2' type='sheet' worksheet='range lines' />
+      <source dashboard='Dashboard2' type='sheet' worksheet='range lines' />
       <command command='tsc:tsl-filter'>
         <param name='exclude' value='crowded lines,range lines' />
         <param name='special-fields' value='all' />
-        <param name='target' value='dash2' />
+        <param name='target' value='Dashboard2' />
       </command>
     </action>
     <action caption='Filter2' name='[Action3_8FBE72903254416086C56466CE1A511A]'>
       <activation auto-clear='true' type='on-select' />
-      <source dashboard='dash2' type='sheet' worksheet='crowded lines' />
+      <source dashboard='Dashboard2' type='sheet' worksheet='crowded lines' />
       <command command='tsc:tsl-filter'>
         <param name='exclude' value='crowded lines,range lines' />
         <param name='special-fields' value='all' />
-        <param name='target' value='dash2' />
+        <param name='target' value='Dashboard2' />
       </command>
     </action>
     <action caption='youtube link' name='[Action7_C382540D3E254BC989EBB2CCE210795A]'>
@@ -7168,7 +7168,7 @@
     </edit-parameter-action>
     <edit-parameter-action caption='Parameter3' name='[Action6_BDF35B8A8A94411982B4DB0BF989F6D4]'>
       <activation type='on-select' />
-      <source dashboard='dash2' type='sheet' />
+      <source dashboard='Dashboard2' type='sheet' />
       <agg-type type='attr' />
       <_.fcp.ParameterActionClearSelection.true...clear-option type='do-nothing' value='i:1' />
       <params>
@@ -7551,8 +7551,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='9'>
-              <calculation class='tableau' formula='9' />
+            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+              <calculation class='tableau' formula='10' />
               <range max='10' min='1' />
             </column>
           </datasource-dependencies>
@@ -7598,7 +7598,7 @@
             <format attr='background-color' value='#b2b0f04b' />
             <format attr='title' field='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' value='בחרי מטרופולין '>
               <formatted-text>
-                <run fontalignment='1'>בחרי מטרופולין </run>
+                <run bold='true' fontalignment='1'>בחרי מטרופולין </run>
               </formatted-text>
             </format>
           </style-rule>
@@ -7757,6 +7757,7 @@
             <style>
               <style-rule element='mark'>
                 <format attr='shape' value='info button/info.png' />
+                <format attr='mark-color' value='#ffffff' />
               </style-rule>
             </style>
           </pane>
@@ -8257,6 +8258,12 @@
               <groupfilter function='level-members' level='[routeID_and_direction]' />
             </groupfilter>
           </filter>
+          <filter class='categorical' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (קו,מזהה קו וכיוון)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action3_8FBE72903254416086C56466CE1A511A]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[RouteName]' />
+              <groupfilter function='level-members' level='[routeID_and_direction]' />
+            </groupfilter>
+          </filter>
           <filter class='quantitative' column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[avg:AVGPaysPerRide:qk]' included-values='non-null' />
           <manual-sort column='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:DayOfWeek:nk]' direction='ASC'>
             <dictionary>
@@ -8272,6 +8279,7 @@
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (routeID and direction)]</column>
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]</column>
             <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (קו,routeID and direction)]</column>
+            <column>[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[Action (קו,מזהה קו וכיוון)]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -8464,7 +8472,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Range (bin):qk]' scope='cols' value='מספר הנוסעים בנסיעה range ' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[none:Range (bin):qk]' scope='cols' value='טווח מספר הנוסעים בנסיעה' />
+            <format attr='title' class='0' field='[federated.0oyf0b41jtdssw15wczvj0unu1e7].[cnt:Calculation_3065825499576451074:qk]' scope='rows' value='מספר קווים' />
           </style-rule>
           <style-rule element='cell'>
             <format attr='border-style' value='solid' />
@@ -8543,8 +8552,8 @@
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='9'>
-              <calculation class='tableau' formula='9' />
+            <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+              <calculation class='tableau' formula='10' />
               <range max='10' min='1' />
             </column>
           </datasource-dependencies>
@@ -9139,6 +9148,217 @@
       </devicelayouts>
       <simple-id uuid='{989EDC2C-8F69-4163-887E-22099481C241}' />
     </dashboard>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontcolor='#55007f' fontname='Tableau Bold' fontsize='22'>בחינה מעמיקה של הקווים הבעיתיים לפי המדדים</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ebdcf08b' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#b2b0f04b' />
+        </style-rule>
+        <style-rule element='parameter-ctrl'>
+          <format attr='border-style' value='solid' />
+          <format attr='border-width' value='2' />
+          <format attr='border-color' value='#6a2da7' />
+          <format attr='background-color' value='#b2b0f04b' />
+        </style-rule>
+      </style>
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='Sheet1 (bus_data_for_dash2)' name='federated.0ev4o2s1pt8dlr11i6agi173p9d6' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='10'>
+          <calculation class='tableau' formula='10' />
+          <range max='10' min='1' />
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.0ev4o2s1pt8dlr11i6agi173p9d6'>
+        <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
+        <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='75' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='51' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+              <zone h='98000' id='24' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone h='6000' id='25' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='92000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='7000'>
+                  <zone h='92000' id='5' type-v2='layout-basic' w='98400' x='800' y='7000'>
+                    <zone h='84720' id='3' name='passengers histogram by hour' w='46105' x='53095' y='7000'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='39124' id='10' name='range lines' w='52295' x='800' y='7000'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='36627' id='12' name='crowded lines' w='52295' x='800' y='62373'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='7280' id='8' name='passengers histogram by hour' pane-specification-id='1' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]' type-v2='color' w='46105' x='53095' y='91720'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone custom-title='true' h='8000' hide-buttons='true' id='49' mode='slider' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='52295' x='800' y='46124'>
+                      <formatted-text>
+                        <run bold='true' fontalignment='1' fontname='Tableau Bold'>בחרי כמה קווים תרצי לראות</run>
+                      </formatted-text>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='8249' id='52' mode='dropdown' name='crowded lines' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' type-v2='filter' values='database' w='52295' x='800' y='54124'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='7375' id='73' name='data for buses' show-title='false' w='7300' x='100' y='375'>
+          <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontalignment='1' fontcolor='#55007f' fontname='Tableau Bold' fontsize='22'>בחינה מעמיקה של הקווים הבעיתיים לפי המדדים</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='72' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='71' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone h='6000' id='25' type-v2='title' w='98400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='39125' id='10' is-fixed='true' name='range lines' w='52296' x='800' y='7000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='84722' id='3' is-fixed='true' name='passengers histogram by hour' w='46104' x='53096' y='7000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7278' id='8' name='passengers histogram by hour' pane-specification-id='1' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]' type-v2='color' w='46104' x='53096' y='91722'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' h='8000' hide-buttons='true' id='49' mode='slider' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='52296' x='800' y='46125'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontname='Tableau Bold'>בחרי כמה קווים תרצי לראות</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='8250' id='52' mode='dropdown' name='crowded lines' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' type-v2='filter' values='database' w='52296' x='800' y='54125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='36625' id='12' is-fixed='true' name='crowded lines' w='52296' x='800' y='62375'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{76C9D051-A8DB-4D91-97EE-914B3B5D162E}' />
+    </dashboard>
     <dashboard name='Story 1' type='storyboard'>
       <layout-options>
         <title>
@@ -9168,9 +9388,49 @@
               <zone h='93985' id='1' param='vert' removable='false' type-v2='layout-flow' w='98684' x='658' y='5263'>
                 <zone h='9492' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98684' x='658' y='5263' />
                 <zone h='84493' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98684' x='658' y='14755'>
-                  <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
+                  <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
                     <story-points>
                       <story-point caption='התחבורה הציבורית בישראל לעומת מדינות אחרות' captured-sheet='ranked countries dashboard' id='1'>
+                        <currentDeltas>
+                          <worksheet name='ranked countries'>
+                            <annotations>
+                              <annotation class='point' delta-type='edited' id='1' mark-position='1' pullback='0' text-width='358'>
+                                <formatted-text>
+                                  <run fontalignment='1' fontsize='12'>ישראל מדורגת מקום שישי!</run>
+                                  <run fontalignment='1'>Æ&#10;</run>
+                                  <run fontalignment='1' fontsize='12'>אז לכאורה מערך האוטובוסים בישראל מתפקד טוב.</run>
+                                  <run fontalignment='1'>Æ&#10;</run>
+                                  <run bold='true' fontalignment='1' fontsize='14'>האמנם?</run>
+                                </formatted-text>
+                                <point>
+                                  <visual-coordinate class='mark'>
+                                    <tuple-reference>
+                                      <tuple-descriptor>
+                                        <pane-descriptor>
+                                          <x-fields>
+                                            <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[sum:Value:qk]</field>
+                                          </x-fields>
+                                          <y-fields>
+                                            <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[none:Country:nk]</field>
+                                          </y-fields>
+                                        </pane-descriptor>
+                                        <columns>
+                                          <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[none:Country:nk]</field>
+                                          <field>[federated.0misjsr0mx4tyz1472y2g1ijm372].[sum:Value:qk]</field>
+                                        </columns>
+                                      </tuple-descriptor>
+                                      <tuple>
+                                        <value>&quot;Israel&quot;</value>
+                                        <value>4.0499786416061996</value>
+                                      </tuple>
+                                    </tuple-reference>
+                                  </visual-coordinate>
+                                </point>
+                                <body x='363' y='117' />
+                              </annotation>
+                            </annotations>
+                          </worksheet>
+                        </currentDeltas>
                         <capturedDeltas>
                           <worksheet name='data for countries'>
                             <selection-collection>
@@ -9465,227 +9725,6 @@
         </devicelayout>
       </devicelayouts>
       <simple-id uuid='{3F53AFF9-63C0-4F5F-9B46-8809A2FE5DB6}' />
-    </dashboard>
-    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='dash2'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run bold='true' fontalignment='1' fontcolor='#55007f' fontname='Tableau Bold' fontsize='22'>בחינה מעמיקה של הקווים הבעיתיים לפי המדדים</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <style>
-        <style-rule element='table'>
-          <format attr='background-color' value='#ebdcf08b' />
-        </style-rule>
-        <style-rule element='dash-title'>
-          <format attr='background-color' value='#b2b0f04b' />
-        </style-rule>
-        <style-rule element='parameter-ctrl'>
-          <format attr='border-style' value='solid' />
-          <format attr='border-width' value='2' />
-          <format attr='border-color' value='#6a2da7' />
-          <format attr='background-color' value='#b2b0f04b' />
-        </style-rule>
-      </style>
-      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
-      <datasources>
-        <datasource name='Parameters' />
-        <datasource caption='Sheet1 (bus_data_for_dash2)' name='federated.0ev4o2s1pt8dlr11i6agi173p9d6' />
-      </datasources>
-      <datasource-dependencies datasource='Parameters'>
-        <column caption='Top K lines' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='9'>
-          <calculation class='tableau' formula='9' />
-          <range max='10' min='1' />
-        </column>
-      </datasource-dependencies>
-      <datasource-dependencies datasource='federated.0ev4o2s1pt8dlr11i6agi173p9d6'>
-        <column datatype='string' name='[Metropolin]' role='dimension' type='nominal' />
-        <column-instance column='[Metropolin]' derivation='None' name='[none:Metropolin:nk]' pivot='key' type='nominal' />
-      </datasource-dependencies>
-      <zones>
-        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98000' id='75' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
-            <zone h='98000' id='51' param='horz' type-v2='layout-flow' w='82400' x='800' y='1000'>
-              <zone h='98000' id='24' param='vert' type-v2='layout-flow' w='82400' x='800' y='1000'>
-                <zone h='6000' id='25' type-v2='title' w='82400' x='800' y='1000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                  </zone-style>
-                </zone>
-                <zone h='92000' id='7' param='horz' type-v2='layout-flow' w='82400' x='800' y='7000'>
-                  <zone h='92000' id='5' type-v2='layout-basic' w='82400' x='800' y='7000'>
-                    <zone h='84720' id='3' name='passengers histogram by hour' w='38608' x='44592' y='7000'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone h='39124' id='10' name='range lines' w='43792' x='800' y='7000'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone h='36627' id='12' name='crowded lines' w='43792' x='800' y='62373'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone h='7280' id='8' name='passengers histogram by hour' pane-specification-id='1' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]' type-v2='color' w='38608' x='44592' y='91720'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone custom-title='true' h='8000' hide-buttons='true' id='49' mode='slider' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='43792' x='800' y='46124'>
-                      <formatted-text>
-                        <run fontalignment='1'>בחרי כמה קווים תרצי לראות</run>
-                      </formatted-text>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone h='8249' id='52' mode='dropdown' name='crowded lines' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' type-v2='filter' values='database' w='43792' x='800' y='54124'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                  </zone>
-                </zone>
-              </zone>
-            </zone>
-            <zone fixed-size='160' h='98000' id='74' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
-              <zone h='5750' id='76' name='data for buses' pane-specification-id='0' param='[federated.0sz1fqj1l82gid1fdl5pt1rzm1sm].[usr:Calculation_311592851097403392:qk]' type-v2='size' w='16000' x='83200' y='1000'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-            </zone>
-          </zone>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='8' />
-          </zone-style>
-        </zone>
-        <zone h='7375' id='73' name='data for buses' show-title='false' w='7300' x='100' y='375'>
-          <layout-cache cell-count-w='1' type-h='cell' type-w='cell' />
-        </zone>
-      </zones>
-      <devicelayouts>
-        <devicelayout auto-generated='true' name='Phone'>
-          <layout-options>
-            <title>
-              <formatted-text>
-                <run bold='true' fontalignment='1' fontcolor='#55007f' fontname='Tableau Bold' fontsize='22'>בחינה מעמיקה של הקווים הבעיתיים לפי המדדים</run>
-              </formatted-text>
-            </title>
-          </layout-options>
-          <size maxheight='1150' minheight='1150' sizing-mode='vscroll' />
-          <zones>
-            <zone h='100000' id='72' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='84000' id='71' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
-                <zone h='6000' id='25' type-v2='title' w='98400' x='800' y='1000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='39125' id='10' is-fixed='true' name='range lines' w='52296' x='800' y='7000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='84722' id='3' is-fixed='true' name='passengers histogram by hour' w='46104' x='53096' y='7000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='7278' id='8' name='passengers histogram by hour' pane-specification-id='1' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[sum:AVGPaysPerRide:qk]' type-v2='color' w='46104' x='53096' y='91722'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone custom-title='true' h='8000' hide-buttons='true' id='49' mode='slider' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='52296' x='800' y='46125'>
-                  <formatted-text>
-                    <run fontalignment='1'>בחרי כמה קווים תרצי לראות</run>
-                  </formatted-text>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='8250' id='52' mode='dropdown' name='crowded lines' param='[federated.0ev4o2s1pt8dlr11i6agi173p9d6].[none:Metropolin:nk]' type-v2='filter' values='database' w='52296' x='800' y='54125'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='36625' id='12' is-fixed='true' name='crowded lines' w='52296' x='800' y='62375'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-              </zone>
-              <zone-style>
-                <format attr='border-color' value='#000000' />
-                <format attr='border-style' value='none' />
-                <format attr='border-width' value='0' />
-                <format attr='margin' value='8' />
-              </zone-style>
-            </zone>
-          </zones>
-        </devicelayout>
-      </devicelayouts>
-      <simple-id uuid='{76C9D051-A8DB-4D91-97EE-914B3B5D162E}' />
     </dashboard>
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='open slide'>
       <style />
@@ -10176,7 +10215,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='-1' />
+      <active id='9' />
       <simple-id uuid='{5CDDCC45-B9EB-4793-96E7-7514CD4A139E}' />
     </window>
     <window class='worksheet' name='passengers histogram by hour'>
@@ -10271,7 +10310,7 @@
       </cards>
       <simple-id uuid='{80F12982-E558-425D-95CE-59079CD4D9F9}' />
     </window>
-    <window class='dashboard' name='dash2'>
+    <window class='dashboard' name='Dashboard2'>
       <viewpoints>
         <viewpoint name='crowded lines'>
           <zoom type='fit-height' />
@@ -10288,12 +10327,12 @@
           <default-map-tool-selection tool='2' />
         </viewpoint>
       </viewpoints>
-      <active id='73' />
+      <active id='-1' />
       <simple-id uuid='{93036830-165B-471B-A390-E4D363526C77}' />
     </window>
     <window class='dashboard' name='Story 1'>
       <viewpoints />
-      <active id='5' />
+      <active id='-1' />
       <simple-id uuid='{1B4D1583-239E-454D-82AE-22147B2D7251}' />
     </window>
     <window class='worksheet' name='ranked countries'>
